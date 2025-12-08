@@ -1,23 +1,21 @@
-<p align="center">
-  <h1 style="background: linear-gradient(90deg, #f26c5d, #f2997a, #4d6595); -webkit-background-clip: text; color: transparent; font-size: 3.5rem; margin-bottom: 0.2em;">
-    Aurumz Website
-  </h1>
-  <p style="font-size: 1.2rem; color: #f2855d; margin-top: 0; font-weight: 600;">
-    Welcome to my personal site repository! 
-  </p>
-</p>
+
+![Logo](assets/web-banner.png)
+
+My web.  
+
+I realised how boring frontend developing actually is for me. I hoped from astro + preact to astro + react, then decided to use plain astro pages, then went to opt for tailwind css. 
+
+It just didn't give me joy and I spent lots of time figuring out responsiveness of this web. I would absolutely never opt for frontend coding ever again.
 
 ---
 
-<h2 style="color:#4d6595;">🌟 About</h2>
+So if the web looks bad and stuff, please bear with me, I had to force myself to make this (It helps in google indexing of my tools).
 
-This is my website deployed via GitHub Pages.  
-
- Built with <a href="https://astro.build/" style="color:#f2855d; font-weight:600;">Astro</a> + 
-<a href="https://preactjs.com/" style="color:#4d6595; font-weight:600;">Preact</a>  
 
 ---
 
-<h2 style="color:#f2855d;">📄 License</h2>
-This project is licensed under the <strong style="color:#4d6595;">Apache-2.0 License</strong>.  
-See the LICENSE file for more info.
+## License
+
+Licensed under the **Apache License 2.0**.
+© 2025 Vihaan Sahu
+
