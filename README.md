@@ -1,5 +1,5 @@
 
-![Logo](assets/web-banner.png)
+![Logo](web-banner.png)
 
 My web.  
 
