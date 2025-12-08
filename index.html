@@ -24,16 +24,24 @@
   <title>Website | Aurumz</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   
-  <!-- Preconnect to external domains for faster loading -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   
-  <!-- Preload critical resources -->
+
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" as="style">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
   <link rel="preload" href="banner1.png" as="image">
   <link rel="preload" href="logo-official.png" as="image">
+  
+
+  <link rel="preload" href="reviewaid.png" as="image">
+  <link rel="preload" href="critiplot.png" as="image">
+  <link rel="preload" href="NOS-TLPlot.png" as="image">
+  <link rel="preload" href="snowih.png" as="image">
+  <link rel="preload" href="critiplot-package.png" as="image">
+  <link rel="preload" href="accesspaper.png" as="image">
   
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -334,7 +342,6 @@
       margin-bottom: var(--spacing-lg);
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
     }
 
     .hero-image-left {
@@ -371,7 +378,6 @@
       gap: var(--spacing-md);
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 1s ease 0.3s forwards;
     }
 
     .car-container {
@@ -382,30 +388,11 @@
       height: auto;
       z-index: 10;
       opacity: 0;
-      animation: fadeInUp 1s ease 0.6s forwards, carRace 5s linear 1.6s forwards;
     }
 
     .car-gif {
       width: 100%;
       height: auto;
-      animation: vibrate 0.2s linear infinite;
-    }
-
-    @keyframes carRace {
-      0% {
-        left: -150px;
-      }
-      100% {
-        left: 110%;
-      }
-    }
-
-    @keyframes vibrate {
-      0% { transform: translateY(0) rotate(0deg); }
-      25% { transform: translateY(-1px) rotate(-0.5deg); }
-      50% { transform: translateY(1px) rotate(0.5deg); }
-      75% { transform: translateY(-1px) rotate(-0.5deg); }
-      100% { transform: translateY(0) rotate(0deg); }
     }
 
     .plane-gif {
@@ -417,44 +404,6 @@
       z-index: 10;
       opacity: 0;
       pointer-events: none;
-    }
-
-    @keyframes flyPlane {
-      0% {
-        left: -600px;
-        top: 15%;
-        transform: rotate(0deg);
-      }
-
-      15% {
-        top: 13%;
-        transform: rotate(9deg);
-      }
-
-      25% {
-        top: 20%;
-        transform: rotate(15deg);
-      }
-
-      35% {
-        top: 15%;
-        transform: rotate(-10deg);
-      }
-
-      50% {
-        top: 30%;
-        transform: rotate(-10deg);
-      }
-
-      75% {
-        top: 50%;
-        transform: rotate(5deg);
-      }
-      100% {
-        left: 110%;
-        top: 60%;
-        transform: rotate(0deg);
-      }
     }
 
     .about {
@@ -500,7 +449,6 @@
       z-index: 2;
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 1s ease 0.5s forwards;
     }
 
     .about-text {
@@ -527,7 +475,6 @@
       margin-bottom: var(--spacing-lg);
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 1s ease 0.7s forwards;
     }
 
     .projects-grid {
@@ -545,14 +492,7 @@
       border: 1px solid var(--border-color);
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
     }
-
-    .project-card:nth-child(1) { animation-delay: 0.9s; }
-    .project-card:nth-child(2) { animation-delay: 1.1s; }
-    .project-card:nth-child(3) { animation-delay: 1.3s; }
-    .project-card:nth-child(4) { animation-delay: 1.5s; }
-    .project-card:nth-child(5) { animation-delay: 1.7s; }
 
     .project-card:hover {
       transform: translateY(-15px);
@@ -623,7 +563,6 @@
       text-align: center;
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 1s ease 1.7s forwards;
     }
 
     .contact-links {
@@ -743,6 +682,61 @@
       to {
         opacity: 1;
         transform: translateY(0);
+      }
+    }
+
+    @keyframes carRace {
+      0% {
+        left: -150px;
+      }
+      100% {
+        left: 110%;
+      }
+    }
+
+    @keyframes vibrate {
+      0% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-1px) rotate(-0.5deg); }
+      50% { transform: translateY(1px) rotate(0.5deg); }
+      75% { transform: translateY(-1px) rotate(-0.5deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+
+    @keyframes flyPlane {
+      0% {
+        left: -600px;
+        top: 15%;
+        transform: rotate(0deg);
+      }
+
+      15% {
+        top: 13%;
+        transform: rotate(9deg);
+      }
+
+      25% {
+        top: 20%;
+        transform: rotate(15deg);
+      }
+
+      35% {
+        top: 15%;
+        transform: rotate(-10deg);
+      }
+
+      50% {
+        top: 30%;
+        transform: rotate(-10deg);
+      }
+
+      75% {
+        top: 50%;
+        transform: rotate(5deg);
+      }
+      100% {
+        left: 110%;
+        top: 60%;
+        transform: rotate(0deg);
       }
     }
 
@@ -1176,7 +1170,7 @@
   </style>
 </head>
 <body>
-  <!-- Loading Screen -->
+ 
   <div class="loader-container" id="loader">
     <div class="loader"></div>
   </div>
@@ -1202,7 +1196,7 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-images-container">
+        <div class="hero-images-container" id="heroImages">
           <div class="hero-image-left">
             <img src="banner1.png" alt="Hello I am Vihaan aka aurumz" loading="eager">
           </div>
@@ -1210,13 +1204,13 @@
             <img src="logo-official.png" alt="Logo" loading="eager">
           </div>
         </div>
-        <div class="hero-buttons">
+        <div class="hero-buttons" id="heroButtons">
           <a href="#projects" class="btn">View Projects</a>
           <a href="#contact" class="btn btn-outline">Get In Touch</a>
         </div>
       </div>
       
-      <div class="car-container">
+      <div class="car-container" id="carContainer">
         <img src="car-moving.gif" alt="Moving Car" class="car-gif" loading="lazy">
       </div>
       <img src="plane.gif" alt="Paper Plane" class="plane-gif" id="planeGif" loading="lazy">
@@ -1225,7 +1219,7 @@
 
   <section class="about" id="about">
     <div class="container">
-      <div class="about-content">
+      <div class="about-content" id="aboutContent">
         <h2>About Me</h2>
         <div class="about-text">
           <p>
@@ -1244,13 +1238,13 @@
 
   <section class="projects" id="projects">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" id="sectionHeader">
         <h2>My Projects</h2>
         <p style="font-size: 1.2rem;">Here are some of my recent Open Source Research projects and Softwares</p>
       </div>
       <div class="projects-grid">
-        <div class="project-card">
-          <img src="reviewaid.png" alt="ReviewAid" class="project-img" loading="lazy">
+        <div class="project-card" id="projectCard1">
+          <img src="reviewaid.png" alt="ReviewAid" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">ReviewAid</h3>
             <p class="project-description">
@@ -1268,8 +1262,8 @@
           </div>
         </div>
         
-        <div class="project-card">
-          <img src="critiplot.png" alt="Critiplot" class="project-img" loading="lazy">
+        <div class="project-card" id="projectCard2">
+          <img src="critiplot.png" alt="Critiplot" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Critiplot</h3>
             <p class="project-description">
@@ -1290,8 +1284,8 @@
           </div>
         </div>
         
-        <div class="project-card">
-          <img src="NOS-TLPlot.png" alt="NOS-TLPlot" class="project-img" loading="lazy">
+        <div class="project-card" id="projectCard3">
+          <img src="NOS-TLPlot.png" alt="NOS-TLPlot" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">NOS-TLPlot</h3>
             <p class="project-description">
@@ -1309,8 +1303,8 @@
           </div>
         </div>
         
-        <div class="project-card">
-          <img src="snowih.png" alt="Snowih" class="project-img" loading="lazy">
+        <div class="project-card" id="projectCard4">
+          <img src="snowih.png" alt="Snowih" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Snowih</h3>
             <p class="project-description">
@@ -1326,8 +1320,8 @@
             </div>
           </div>
         </div>
-        <div class="project-card">
-          <img src="critiplot-package.png" alt="Critiplot" class="project-img" loading="lazy">
+        <div class="project-card" id="projectCard5">
+          <img src="critiplot-package.png" alt="Critiplot" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Critiplot Python Package</h3>
             <p class="project-description">
@@ -1347,8 +1341,8 @@
             </div>
           </div>
         </div>
-        <div class="project-card">
-          <img src="accesspaper.png" alt="AccessPaper" class="project-img" loading="lazy">
+        <div class="project-card" id="projectCard6">
+          <img src="accesspaper.png" alt="AccessPaper" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">AccessPaper</h3>
             <p class="project-description">
@@ -1370,7 +1364,7 @@
 
   <section class="contact" id="contact">
     <div class="container">
-      <div class="contact-content">
+      <div class="contact-content" id="contactContent">
         <h2>Get In Touch</h2>
         <p style="font-size: 1.4rem;">Here are my Socials, feel free to reach out to me for collaborations, research opportunities, or just to say hello!</p>
         <div class="contact-links">
@@ -1428,17 +1422,43 @@
   </footer>
 
   <script>
-    // Hide loader when page is fully loaded (had to Optimize cause it wasnt running well on github.io)
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        const loader = document.getElementById('loader');
-        loader.style.opacity = '0';
-        setTimeout(function() {
-          loader.style.display = 'none';
-        }, 500);
-      }, 500);
+    
+    function startAnimations() {
       
-      // Start plane animation after loader is hidden (Opt)
+      const heroImages = document.getElementById('heroImages');
+      const heroButtons = document.getElementById('heroButtons');
+      const carContainer = document.getElementById('carContainer');
+      
+      heroImages.style.animation = 'fadeInUp 1s ease forwards';
+      heroButtons.style.animation = 'fadeInUp 1s ease 0.3s forwards';
+      carContainer.style.animation = 'fadeInUp 1s ease 0.6s forwards, carRace 5s linear 1.6s forwards';
+      
+      
+      const carGif = document.querySelector('.car-gif');
+      carGif.style.animation = 'vibrate 0.2s linear infinite';
+      
+      
+      const aboutContent = document.getElementById('aboutContent');
+      aboutContent.style.animation = 'fadeInUp 1s ease 0.5s forwards';
+      
+      
+      const sectionHeader = document.getElementById('sectionHeader');
+      sectionHeader.style.animation = 'fadeInUp 1s ease 0.7s forwards';
+      
+      
+      for (let i = 1; i <= 6; i++) {
+        const card = document.getElementById(`projectCard${i}`);
+        if (card) {
+          const delay = 0.9 + (i - 1) * 0.2;
+          card.style.animation = `fadeInUp 1s ease ${delay}s forwards`;
+        }
+      }
+      
+      
+      const contactContent = document.getElementById('contactContent');
+      contactContent.style.animation = 'fadeInUp 1s ease 1.7s forwards';
+      
+      
       setTimeout(function() {
         const plane = document.getElementById('planeGif');
         if (plane) {
@@ -1450,6 +1470,44 @@
           }, 8000);
         }
       }, 1000);
+    }
+
+   
+    window.addEventListener('load', function() {
+      
+      const images = document.querySelectorAll('img');
+      let loadedImages = 0;
+      
+      function checkAllImagesLoaded() {
+        loadedImages++;
+        if (loadedImages === images.length) {
+          
+          setTimeout(function() {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(function() {
+              loader.style.display = 'none';
+              
+              setTimeout(startAnimations, 100);
+            }, 500);
+          }, 500);
+        }
+      }
+      
+      
+      if (images.length === 0) {
+        checkAllImagesLoaded();
+      } else {
+        
+        images.forEach(img => {
+          if (img.complete) {
+            checkAllImagesLoaded();
+          } else {
+            img.addEventListener('load', checkAllImagesLoaded);
+            img.addEventListener('error', checkAllImagesLoaded); 
+          }
+        });
+      }
     });
 
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
