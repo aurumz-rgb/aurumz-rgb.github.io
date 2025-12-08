@@ -24,10 +24,18 @@
   <title>Website | Aurumz</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   
+  <!-- Preconnect to external domains for faster loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+  <link rel="preload" href="banner1.png" as="image">
+  <link rel="preload" href="logo-official.png" as="image">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -77,6 +85,34 @@
       color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
+    }
+
+    /* Loading screen */
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 155, 69, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--accent);
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -1140,6 +1176,11 @@
   </style>
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div class="loader-container" id="loader">
+    <div class="loader"></div>
+  </div>
+
   <header>
     <div class="container">
       <nav>
@@ -1163,10 +1204,10 @@
       <div class="hero-content">
         <div class="hero-images-container">
           <div class="hero-image-left">
-            <img src="banner1.png" alt="Hello I am Vihaan aka aurumz">
+            <img src="banner1.png" alt="Hello I am Vihaan aka aurumz" loading="eager">
           </div>
           <div class="hero-logo-right">
-            <img src="logo-official.png" alt="Logo">
+            <img src="logo-official.png" alt="Logo" loading="eager">
           </div>
         </div>
         <div class="hero-buttons">
@@ -1176,9 +1217,9 @@
       </div>
       
       <div class="car-container">
-        <img src="car-moving.gif" alt="Moving Car" class="car-gif">
+        <img src="car-moving.gif" alt="Moving Car" class="car-gif" loading="lazy">
       </div>
-      <img src="plane.gif" alt="Paper Plane" class="plane-gif" id="planeGif">
+      <img src="plane.gif" alt="Paper Plane" class="plane-gif" id="planeGif" loading="lazy">
     </div>
   </section>
 
@@ -1191,7 +1232,7 @@
             A Medical Student with a keen interest in Development, Open Access and Animation. I've also found an interest in Research, Evidence synthesis based Research methodology, Evidence synthesis and open-source Research Softwares.
           </p>
           <p>
-           I also have experience in animation using Adobe Flash/Animate and Adobe After Effects. I’m familiar with Adobe Premiere Pro and Photoshop, and I typically use Adobe Illustrator for creating logos and other graphical elements in my projects.
+           I also have experience in animation using Adobe Flash/Animate and Adobe After Effects. I'm familiar with Adobe Premiere Pro and Photoshop, and I typically use Adobe Illustrator for creating logos and other graphical elements in my projects.
           </p>
           <p>
             I mostly work with Python and HTML, and I currently have limited knowledge of other programming languages. Since my projects are self-funded, I host them using Streamlit. Support and Sponsorships made via my Github Sponsors is one of the best ways for supporting my work.
@@ -1209,7 +1250,7 @@
       </div>
       <div class="projects-grid">
         <div class="project-card">
-          <img src="reviewaid.png" alt="ReviewAid" class="project-img">
+          <img src="reviewaid.png" alt="ReviewAid" class="project-img" loading="lazy">
           <div class="project-content">
             <h3 class="project-title">ReviewAid</h3>
             <p class="project-description">
@@ -1228,7 +1269,7 @@
         </div>
         
         <div class="project-card">
-          <img src="critiplot.png" alt="Critiplot" class="project-img">
+          <img src="critiplot.png" alt="Critiplot" class="project-img" loading="lazy">
           <div class="project-content">
             <h3 class="project-title">Critiplot</h3>
             <p class="project-description">
@@ -1250,7 +1291,7 @@
         </div>
         
         <div class="project-card">
-          <img src="NOS-TLPlot.png" alt="NOS-TLPlot" class="project-img">
+          <img src="NOS-TLPlot.png" alt="NOS-TLPlot" class="project-img" loading="lazy">
           <div class="project-content">
             <h3 class="project-title">NOS-TLPlot</h3>
             <p class="project-description">
@@ -1269,7 +1310,7 @@
         </div>
         
         <div class="project-card">
-          <img src="snowih.png" alt="Snowih" class="project-img">
+          <img src="snowih.png" alt="Snowih" class="project-img" loading="lazy">
           <div class="project-content">
             <h3 class="project-title">Snowih</h3>
             <p class="project-description">
@@ -1286,7 +1327,7 @@
           </div>
         </div>
         <div class="project-card">
-          <img src="critiplot-package.png" alt="Critiplot" class="project-img">
+          <img src="critiplot-package.png" alt="Critiplot" class="project-img" loading="lazy">
           <div class="project-content">
             <h3 class="project-title">Critiplot Python Package</h3>
             <p class="project-description">
@@ -1307,7 +1348,7 @@
           </div>
         </div>
         <div class="project-card">
-          <img src="accesspaper.png" alt="AccessPaper" class="project-img">
+          <img src="accesspaper.png" alt="AccessPaper" class="project-img" loading="lazy">
           <div class="project-content">
             <h3 class="project-title">AccessPaper</h3>
             <p class="project-description">
@@ -1387,6 +1428,30 @@
   </footer>
 
   <script>
+    // Hide loader when page is fully loaded (had to Optimize cause it wasnt running well on github.io)
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(function() {
+          loader.style.display = 'none';
+        }, 500);
+      }, 500);
+      
+      // Start plane animation after loader is hidden (Opt)
+      setTimeout(function() {
+        const plane = document.getElementById('planeGif');
+        if (plane) {
+          plane.style.opacity = '1';
+          plane.style.animation = 'flyPlane 8s ease-in-out forwards';
+          
+          setTimeout(function() {
+            plane.style.display = 'none';
+          }, 8000);
+        }
+      }, 1000);
+    });
+
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
     
@@ -1440,22 +1505,6 @@
         top: 0,
         behavior: 'smooth'
       });
-    });
-
-
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        const plane = document.getElementById('planeGif');
-        if (plane) {
-          plane.style.opacity = '1';
-          plane.style.animation = 'flyPlane 8s ease-in-out forwards';
-          
-         
-          setTimeout(function() {
-            plane.style.display = 'none';
-          }, 8000);
-        }
-      }, 2000);
     });
   </script>
 </body>
