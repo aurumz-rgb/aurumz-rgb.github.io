@@ -1470,6 +1470,32 @@
           }, 8000);
         }
       }, 1000);
+      
+      
+      setupCarAnimationLoop();
+    }
+    
+    function setupCarAnimationLoop() {
+      const carContainer = document.getElementById('carContainer');
+      
+      
+      function restartCarAnimation() {
+        
+        carContainer.style.animation = 'none';
+        carContainer.style.left = '-150px';
+        
+        
+        void carContainer.offsetWidth;
+        
+        
+        carContainer.style.animation = 'fadeInUp 1s ease forwards, carRace 5s linear 1s forwards';
+        
+        
+        setTimeout(restartCarAnimation, 6000 + 2000); 
+      }
+      
+      
+      setTimeout(restartCarAnimation, 9000); 
     }
 
    
