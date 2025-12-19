@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <meta name="description" content="Vihaan S (Aurumz) - Medical Student, Reasearcher & Developer. Explore projects like ReviewAid, Critiplot, and more.">
+  <meta name="description" content="Vihaan (Aurumz) - Medical Student, Researcher & Developer. Explore projects like ReviewAid, Critiplot, NOS-TLPlot and more.">
   <meta name="keywords" content="Vihaan Sahu, Aurumz, Critiplot, NOS-TLPlot, Snowih, ReviewAid, medical student, developer, AI, research tools, systematic review, web development, Python, HTML">
   <meta name="author" content="Vihaan S (Aurumz)">
   <meta name="robots" content="index, follow">
@@ -95,7 +95,7 @@
       overflow-x: hidden;
     }
 
-    /* Loading screen */
+   
     .loader-container {
       position: fixed;
       top: 0;
@@ -693,13 +693,12 @@
         left: 110%;
       }
     }
-
-    @keyframes vibrate {
-      0% { transform: translateY(0) rotate(0deg); }
-      25% { transform: translateY(-1px) rotate(-0.5deg); }
-      50% { transform: translateY(1px) rotate(0.5deg); }
-      75% { transform: translateY(-1px) rotate(-0.5deg); }
-      100% { transform: translateY(0) rotate(0deg); }
+     @keyframes vibrate {
+       0% { transform: translateY(0) rotate(0deg); }
+       25% { transform: translateY(-1.5px) rotate(-0.75deg); } 
+       50% { transform: translateY(1.5px) rotate(0.75deg); }   
+       75% { transform: translateY(-1.5px) rotate(-0.75deg); }  
+       100% { transform: translateY(0) rotate(0deg); }
     }
 
     @keyframes flyPlane {
@@ -995,7 +994,7 @@
       
 
       .car-container {
-        width: 80px;
+        width: 120px; 
         bottom: calc(-67px * 0.6); 
         left: -150px;
       }
@@ -1109,7 +1108,7 @@
       
    
       .car-container {
-        width: 60px;
+        width: 100px; 
         bottom: calc(-67px * 0.5); 
         left: -100px;
       }
@@ -1257,7 +1256,7 @@
             </div>
             <div class="project-links">
               <a href="https://github.com/aurumz-rgb/reviewaid" target="_blank" class="btn btn-outline">GitHub</a>
-              <a href="https://review-aid.github.io" target="_blank" class="btn">Website</a>
+              <a href="https://reviewaid.github.io" target="_blank" class="btn">Website</a>
             </div>
           </div>
         </div>
@@ -1278,7 +1277,7 @@
               <span class="tag">Risk-of-Bias</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/aurumz-rgb/critiplot" target="_blank" class="btn btn-outline">GitHub</a>
+              <a href="https://github.com/aurumz-rgb/Critiplot-main" target="_blank" class="btn btn-outline">GitHub</a>
               <a href="https://critiplot.vercel.app" target="_blank" class="btn">Website</a>
             </div>
           </div>
@@ -1316,7 +1315,7 @@
             </div>
             <div class="project-links">
               <a href="https://github.com/Snowih" target="_blank" class="btn btn-outline">GitHub</a>
-              <a href="https://snowih.streamlit.app" target="_blank" class="btn">Website</a>
+              <a href="https://snowih.github.io" target="_blank" class="btn">Website</a>
             </div>
           </div>
         </div>
@@ -1331,6 +1330,7 @@
                <span class="tag">NOS</span>
               <span class="tag">GRADE</span>
               <span class="tag">ROBIS</span>
+              <span class="tag">MMAT</span>
               <span class="tag">JBI Case Reports</span>
               <span class="tag">JBI Case Series</span>
               <span class="tag">Risk-of-Bias</span>
@@ -1351,7 +1351,7 @@
             </p>
             <div class="project-tags">
                <span class="tag">DOI - search</span>
-              <span class="tag">Unpaywall</span>
+               <span class="tag">Paper fetcher</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/aurumz-rgb/AccessPaper" target="_blank" class="btn btn-outline">GitHub</a>
@@ -1417,7 +1417,7 @@
       </div>
       <div class="footer-right">
         <span>Copyright © Vihaan Sahu 2025 – Apache 2.0 License</span>
-        <span>Last Updated: 2:12 AM. December 9, 2025</span>
+        <span>Last Updated: 3:19 AM. December 20, 2025</span>
       </div>
     </div>
   </footer>
@@ -1492,7 +1492,7 @@
         carContainer.style.animation = 'fadeInUp 1s ease forwards, carRace 5s linear 1s forwards';
         
         
-        setTimeout(restartCarAnimation, 6000 + 2000); 
+        setTimeout(restartCarAnimation, 6000 + 1000); 
       }
       
       
