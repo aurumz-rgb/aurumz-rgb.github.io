@@ -782,15 +782,15 @@
       
       
       .car-container {
-        bottom: calc(-67px * 0.8);
-        width: clamp(100px, 18vw, 180px); 
+        bottom: calc(-67px * 1.1); 
+        width: clamp(120px, 20vw, 200px); 
       }
       
       
       .plane-gif {
         top: 25%;
-        left: -500px;
-        width: clamp(350px, 60vw, 600px);
+        left: -550px;
+        width: clamp(400px, 70vw, 650px); 
       }
       
       @keyframes carRace {
@@ -804,7 +804,7 @@
       
       @keyframes flyPlane {
         0% {
-          left: -500px;
+          left: -550px;
           top: 15%;
           transform: rotate(0deg);
         }
@@ -994,16 +994,16 @@
       
 
       .car-container {
-        width: 120px; 
-        bottom: calc(-67px * 0.6); 
+        width: 140px;
+        bottom: calc(-67px * 0.91); 
         left: -150px;
       }
       
   
       .plane-gif {
         top: 20%;
-        left: -400px;
-        width: clamp(300px, 65vw, 550px);
+        left: -450px; 
+        width: clamp(350px, 75vw, 600px);
       }
       
       @keyframes carRace {
@@ -1017,7 +1017,7 @@
       
       @keyframes flyPlane {
         0% {
-          left: -400px;
+          left: -450px;  
           top: 20%;
           transform: rotate(0deg);
         }
@@ -1108,14 +1108,14 @@
       
    
       .car-container {
-        width: 100px; 
-        bottom: calc(-67px * 0.5); 
-        left: -100px;
+        width: 120px; 
+        bottom: calc(-67px * 0.86); 
+        left: -120px;
       }
       
       @keyframes carRace {
         0% {
-          left: -100px;
+          left: -120px; 
         }
         100% {
           left: 100%;
@@ -1124,13 +1124,13 @@
 
       .plane-gif {
         top: 15%;
-        left: -300px;
-        width: clamp(250px, 70vw, 500px); 
+        left: -350px; 
+        width: clamp(300px, 80vw, 550px); 
       }
       
       @keyframes flyPlane {
         0% {
-          left: -300px;
+          left: -350px; 
           top: 25%;
           transform: rotate(0deg);
         }
@@ -1417,7 +1417,7 @@
       </div>
       <div class="footer-right">
         <span>Copyright © Vihaan Sahu 2025 – Apache 2.0 License</span>
-        <span>Last Updated: 3:19 AM. December 20, 2025</span>
+        <span>Last Updated: 3:50 AM. December 20, 2025</span>
       </div>
     </div>
   </footer>
@@ -1432,20 +1432,21 @@
       
       heroImages.style.animation = 'fadeInUp 1s ease forwards';
       heroButtons.style.animation = 'fadeInUp 1s ease 0.3s forwards';
-      carContainer.style.animation = 'fadeInUp 1s ease 0.6s forwards, carRace 5s linear 1.6s forwards';
       
+  
+      const isMobile = window.innerWidth <= 992;
+      const carAnimationDuration = isMobile ? '3s' : '5s';
+      
+      carContainer.style.animation = `fadeInUp 1s ease 0.6s forwards, carRace ${carAnimationDuration} linear 1.6s forwards`;
       
       const carGif = document.querySelector('.car-gif');
       carGif.style.animation = 'vibrate 0.2s linear infinite';
       
-      
       const aboutContent = document.getElementById('aboutContent');
       aboutContent.style.animation = 'fadeInUp 1s ease 0.5s forwards';
       
-      
       const sectionHeader = document.getElementById('sectionHeader');
       sectionHeader.style.animation = 'fadeInUp 1s ease 0.7s forwards';
-      
       
       for (let i = 1; i <= 6; i++) {
         const card = document.getElementById(`projectCard${i}`);
@@ -1455,10 +1456,8 @@
         }
       }
       
-      
       const contactContent = document.getElementById('contactContent');
       contactContent.style.animation = 'fadeInUp 1s ease 1.7s forwards';
-      
       
       setTimeout(function() {
         const plane = document.getElementById('planeGif');
@@ -1472,43 +1471,38 @@
         }
       }, 1000);
       
-      
       setupCarAnimationLoop();
     }
     
     function setupCarAnimationLoop() {
       const carContainer = document.getElementById('carContainer');
       
-      
       function restartCarAnimation() {
+       
+        const isMobile = window.innerWidth <= 992;
+        const carAnimationDuration = isMobile ? '3s' : '5s';
+        const delayTime = isMobile ? 1000 : 1000;
         
         carContainer.style.animation = 'none';
         carContainer.style.left = '-150px';
         
-        
         void carContainer.offsetWidth;
         
+        carContainer.style.animation = `fadeInUp 1s ease forwards, carRace ${carAnimationDuration} linear 1s forwards`;
         
-        carContainer.style.animation = 'fadeInUp 1s ease forwards, carRace 5s linear 1s forwards';
-        
-        
-        setTimeout(restartCarAnimation, 6000 + 1000); 
+        setTimeout(restartCarAnimation, (parseFloat(carAnimationDuration) * 1000) + delayTime);
       }
       
-      
-      setTimeout(restartCarAnimation, 9000); 
+      setTimeout(restartCarAnimation, 9000);
     }
 
-   
     window.addEventListener('load', function() {
-      
       const images = document.querySelectorAll('img');
       let loadedImages = 0;
       
       function checkAllImagesLoaded() {
         loadedImages++;
         if (loadedImages === images.length) {
-          
           setTimeout(function() {
             const loader = document.getElementById('loader');
             loader.style.opacity = '0';
@@ -1521,11 +1515,9 @@
         }
       }
       
-      
       if (images.length === 0) {
         checkAllImagesLoaded();
       } else {
-        
         images.forEach(img => {
           if (img.complete) {
             checkAllImagesLoaded();
