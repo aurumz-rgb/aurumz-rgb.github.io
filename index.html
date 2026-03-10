@@ -89,8 +89,8 @@
     }
 
     html {
-  
-      scroll-behavior: auto;
+      /* Changed to smooth to use native browser smooth scrolling */
+      scroll-behavior: smooth;
     }
 
     body {
@@ -1188,6 +1188,11 @@
         transform: translateX(-50%);
       }
 
+      .astronaut-gif {
+        width: 140px; 
+  
+      }
+
 
       .car-container {
         width: 140px;
@@ -1907,55 +1912,20 @@
       </div>
       <div class="footer-right">
         <span>Copyright © Vihaan Sahu 2025 – Apache 2.0 License</span>
-        <span>Last Updated: 4:42 AM. March 5 , 2026</span>
+        <span>Last Updated: 8:02 PM. March 10 , 2026</span>
       </div>
     </div>
   </footer>
 
   <script>
 
-    let scrollY = 0;
-    let currentScroll = 0;
-    let targetScroll = 0;
-
-
-    const ease = 0.075; // Lower = heavier/slower inertia
-    const scrollSpeed = 0.4; // Lower = slower scroll speed
-
-
-    window.addEventListener('wheel', (e) => {
-      targetScroll += e.deltaY * scrollSpeed;
-
-
-      const maxScroll = document.body.scrollHeight - window.innerHeight;
-      if (targetScroll < 0) targetScroll = 0;
-      if (targetScroll > maxScroll) targetScroll = maxScroll;
-    });
-
-
-    function animateScroll() {
-
-      currentScroll += (targetScroll - currentScroll) * ease;
-
-
-      window.scrollTo(0, currentScroll);
-
-      requestAnimationFrame(animateScroll);
-    }
-    animateScroll();
-
-
-
-
     function startAnimations() {
-
       const heroImages = document.getElementById('heroImages');
       const heroButtons = document.getElementById('heroButtons');
       const carContainer = document.getElementById('carContainer');
 
       heroImages.style.animation = 'fadeInUp 1s ease forwards';
       heroButtons.style.animation = 'fadeInUp 1s ease 0.3s forwards';
-
 
       const isMobile = window.innerWidth <= 992;
       const carAnimationDuration = isMobile ? '3s' : '5s';
@@ -2005,7 +1975,6 @@
       const carContainer = document.getElementById('carContainer');
 
       function restartCarAnimation() {
-
         const isMobile = window.innerWidth <= 992;
         const carAnimationDuration = isMobile ? '3s' : '5s';
         const delayTime = 100;
@@ -2020,13 +1989,10 @@
         setTimeout(restartCarAnimation, (parseFloat(carAnimationDuration) * 1000) + delayTime);
       }
 
-            const isMobile = window.innerWidth <= 992;
-      // Desktop car finishes ~5.5s, so wait 6s. Mobile finishes ~3.5s, so wait 4s.
+      const isMobile = window.innerWidth <= 992;
       const initialWait = isMobile ? 4000 : 6000;
       setTimeout(restartCarAnimation, initialWait);
-
     }
-
 
     window.addEventListener('load', function () {
       const images = document.querySelectorAll('img');
@@ -2044,7 +2010,6 @@
           setTimeout(startAnimations, 100);
         }, 500);
       }
-
 
       const safetyTimeout = setTimeout(finishLoading, 4000);
 
@@ -2091,7 +2056,14 @@
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          targetScroll = targetElement.offsetTop;
+          const headerOffset = 80;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+          window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+          });
         }
       });
     });
@@ -2106,7 +2078,6 @@
     });
 
     const scrollToTopBox = document.getElementById('scrollToTopBox');
-    let lastScrollTop = 0;
 
     window.addEventListener('scroll', function () {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -2118,13 +2089,11 @@
       } else {
         scrollToTopBox.classList.remove('show');
       }
-
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
-
     scrollToTopBox.addEventListener('click', function () {
-      targetScroll = 0;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
