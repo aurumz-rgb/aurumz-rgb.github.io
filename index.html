@@ -484,17 +484,6 @@
     }
 
 
-    .bulb-gif {
-      position: absolute;
-      top: 0;
-      right: var(--spacing-md);
-      width: clamp(100px, 15vw, 140px);
-      height: auto;
-      z-index: 5;
-      opacity: 0;
-      animation: fadeInUp 1s ease 0.8s forwards;
-      pointer-events: none;
-    }
 
     
     .astronaut-gif {
@@ -519,12 +508,7 @@
 
   
     @media (max-width: 992px) {
-      .bulb-gif {
-        display: block;
-        top: -20px;
-        right: -10px;
-        width: 85px; 
-      }
+ 
 
       .astronaut-gif {
         bottom: 85px; 
@@ -1566,8 +1550,6 @@
             </div>
           </div>
         </div>
-
-        <img src="Bulb.gif" class="bulb-gif" alt="Idea Bulb" loading="lazy">
       </div>
     </div>
   </section>
@@ -1696,7 +1678,7 @@
             <div class="project-links">
               <a href="https://github.com/aurumz-rgb/critiplot-package" target="_blank"
                 class="btn btn-outline">GitHub</a>
-              <a href="https://pypi.org/project/critiplot/" target="_blank" class="btn">PyPi</a>
+              <a href="https://pypi.org/project/critiplot/" target="_blank" class="btn">PyPI</a>
 
             </div>
           </div>
@@ -1724,6 +1706,27 @@
           </div>
         </div>
 
+        <div class="project-card" id="projectCard_rikai">
+          <img src="rikai.png" alt="RikaiCode" class="project-img" loading="eager">
+          <div class="project-content">
+            <h3 class="project-title"> RikaiCode.</h3>
+            <p class="project-description">
+              RikaiCode helps you understand any GitHub or GitLab repo in seconds. It flattens the entire codebase for easy reading, grades code quality from A++ to C, visualizes the project architecture, and scans for potential security issues.
+            </p>
+            <div class="project-tags">
+              <span class="tag">codebase-analysis</span>
+              <span class="tag">developer-tools</span>
+              <span class="tag">repository-flattener</span>
+              <span class="tag">code-documentation</span>
+              <span class="tag">ai-code-review</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/aurumz-rgb/RikaiCode" target="_blank"
+                class="btn btn-outline">GitHub</a>
+              <a href="https://rikaicode.github.io" target="_blank" class="btn">Website</a>
+            </div>
+          </div>
+        </div>
 
 
 
