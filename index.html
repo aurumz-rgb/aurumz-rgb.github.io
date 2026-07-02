@@ -15,17 +15,17 @@
   <meta property="og:title" content="Aurumz web">
   <meta property="og:description" content="Medical Student, Researcher & Developer.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://aurumz-rgb.github.io/web-banner.png">
+  <meta property="og:image" content="https://aurumz-rgb.github.io/assets/web-banner.png">
   <meta property="og:image:alt" content="Banner">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Aurumz web">
   <meta name="twitter:description" content="Medical Student, Researcher & Developer.">
-  <meta name="twitter:image" content="https://aurumz-rgb.github.io/web-banner.png">
+  <meta name="twitter:image" content="https://aurumz-rgb.github.io/assets/web-banner.png">
   <meta name="twitter:image:alt" content="Aurumz Banner">
 
   <title>Website / Aurumz </title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,16 +36,16 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
     as="style">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
-  <link rel="preload" href="banner1.png" as="image">
-  <link rel="preload" href="logo-official.png" as="image">
+  <link rel="preload" href="assets/banner1.png" as="image">
+  <link rel="preload" href="assets/logo-official.png" as="image">
 
 
-  <link rel="preload" href="reviewaid.png" as="image">
-  <link rel="preload" href="critiplot.png" as="image">
-  <link rel="preload" href="NOS-TLPlot.png" as="image">
-  <link rel="preload" href="snowih.png" as="image">
-  <link rel="preload" href="critiplot-package.png" as="image">
-  <link rel="preload" href="accesspaper.png" as="image">
+  <link rel="preload" href="images/reviewaid.png" as="image">
+  <link rel="preload" href="images/critiplot.png" as="image">
+  <link rel="preload" href="images/NOS-TLPlot.png" as="image">
+  <link rel="preload" href="images/snowih.png" as="image">
+  <link rel="preload" href="images/critiplot-package.png" as="image">
+  <link rel="preload" href="images/accesspaper.png" as="image">
 
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
@@ -69,7 +69,7 @@
       --font-heading: 'Open Sans', sans-serif;
 
       --spacing-xs: 0.5rem;
-      --spacing-sm: 1rem;
+      --spacing-sm: 2rem;
       --spacing-md: 2rem;
       --spacing-lg: 3.5rem;
       --spacing-xl: 5rem;
@@ -89,7 +89,7 @@
     }
 
     html {
-      /* Changed to smooth to use native browser smooth scrolling */
+    
       scroll-behavior: smooth;
     }
 
@@ -486,34 +486,7 @@
 
 
     
-    .astronaut-gif {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: clamp(120px, 18vw, 250px);
-      z-index: 1;
-      opacity: 0;
-      pointer-events: none;
-     
-      animation: fadeInUp 1s ease 1s forwards, floatAstronaut 6s ease-in-out infinite;
-    }
-
-    @keyframes floatAstronaut {
-      0% { transform: translate(0, 0) rotate(0deg); }
-      25% { transform: translate(15px, -20px) rotate(5deg); }
-      50% { transform: translate(-10px, -30px) rotate(-5deg); }
-      75% { transform: translate(15px, -15px) rotate(3deg); }
-      100% { transform: translate(0, 0) rotate(0deg); }
-    }
-
   
-    @media (max-width: 992px) {
- 
-
-      .astronaut-gif {
-        bottom: 85px; 
-      }
-    }
 
 
     .tech-stack-wrapper {
@@ -1172,10 +1145,7 @@
         transform: translateX(-50%);
       }
 
-      .astronaut-gif {
-        width: 140px; 
-  
-      }
+   
 
 
       .car-container {
@@ -1399,10 +1369,10 @@
       <div class="hero-content">
         <div class="hero-images-container" id="heroImages">
           <div class="hero-image-left">
-            <img src="banner1.png" alt="Hello I am Vihaan aka aurumz" loading="eager">
+            <img src="assets/banner1.png" alt="Hello I am Vihaan aka aurumz" loading="eager">
           </div>
           <div class="hero-logo-right">
-            <img src="logo-official.png" alt="Logo" loading="eager">
+            <img src="assets/logo-official.png" alt="Logo" loading="eager">
           </div>
         </div>
         <div class="hero-buttons" id="heroButtons">
@@ -1412,9 +1382,9 @@
       </div>
 
       <div class="car-container" id="carContainer">
-        <img src="car-moving.gif" alt="Moving Car" class="car-gif" loading="lazy">
+        <img src="assets/car-moving.gif" alt="Moving Car" class="car-gif" loading="lazy">
       </div>
-      <img src="plane.gif" alt="Paper Plane" class="plane-gif" id="planeGif" loading="lazy">
+      <img src="assets/plane.gif" alt="Paper Plane" class="plane-gif" id="planeGif" loading="lazy">
     </div>
   </section>
 
@@ -1562,11 +1532,11 @@
         <h2>My Projects</h2>
        
         <p style="font-size: 1.2rem;">Here are some of my recent Open Source Research projects and Softwares</p>
-         <img src="astronaut.gif" class="astronaut-gif" alt="Floating Astronaut" loading="lazy">
+   
       </div>
       <div class="projects-grid">
         <div class="project-card" id="projectCard1">
-          <img src="reviewaid.png" alt="ReviewAid" class="project-img" loading="eager">
+          <img src="images/reviewaid.png" alt="ReviewAid" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">ReviewAid</h3>
             <p class="project-description">
@@ -1588,7 +1558,7 @@
 
 
         <div class="project-card" id="projectCard2">
-          <img src="critiplot.png" alt="Critiplot" class="project-img" loading="eager">
+          <img src="images/critiplot.png" alt="Critiplot" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Critiplot</h3>
             <p class="project-description">
@@ -1613,7 +1583,7 @@
 
 
         <div class="project-card" id="projectCard22">
-          <img src="evidencesynthesis-tools.png" alt="Evidence Synthesis Tools" class="project-img" loading="eager">
+          <img src="images/evidencesynthesis-tools.png" alt="Evidence Synthesis Tools" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Evidence Synthesis Tools</h3>
             <p class="project-description">
@@ -1639,7 +1609,7 @@
 
 
         <div class="project-card" id="projectCard3">
-          <img src="NOS-TLPlot.png" alt="NOS-TLPlot" class="project-img" loading="eager">
+          <img src="images/NOS-TLPlot.png" alt="NOS-TLPlot" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">NOS-TLPlot</h3>
             <p class="project-description">
@@ -1660,7 +1630,7 @@
         </div>
 
         <div class="project-card" id="projectCard5">
-          <img src="critiplot-package.png" alt="Critiplot" class="project-img" loading="eager">
+          <img src="images/critiplot-package.png" alt="Critiplot" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Critiplot Python Package</h3>
             <p class="project-description">
@@ -1685,7 +1655,7 @@
         </div>
 
                 <div class="project-card" id="projectCard22222">
-          <img src="awesome.png" alt="Evidence Synthesis Tools" class="project-img" loading="eager">
+          <img src="images/awesome.png" alt="Evidence Synthesis Tools" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title"> Awesome Evidence Synthesis</h3>
             <p class="project-description">
@@ -1707,7 +1677,7 @@
         </div>
 
         <div class="project-card" id="projectCard_rikai">
-          <img src="rikai.png" alt="RikaiCode" class="project-img" loading="eager">
+          <img src="images/rikai.png" alt="RikaiCode" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title"> RikaiCode.</h3>
             <p class="project-description">
@@ -1742,7 +1712,7 @@
       </div>
       <div class="projects-grid">
         <div class="project-card" id="projectCard4">
-          <img src="snowih.png" alt="Snowih" class="project-img" loading="eager">
+          <img src="images/snowih.png" alt="Snowih" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Snowih</h3>
             <p class="project-description">
@@ -1761,7 +1731,7 @@
         </div>
 
                <div class="project-card" id="projectCard6">
-          <img src="ReviewAid-legacy.png" alt="RA-L" class="project-img" loading="eager">
+          <img src="images/ReviewAid-legacy.png" alt="RA-L" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">ReviewAid (Cohere Prototype)</h3>
             <p class="project-description">
@@ -1782,7 +1752,7 @@
 
 
           <div class="project-card" id="projectCard6">
-          <img src="ReviewScreener.png" alt="RA-L" class="project-img" loading="eager">
+          <img src="images/ReviewScreener.png" alt="RA-L" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">ReviewScreener</h3>
             <p class="project-description">
@@ -1804,7 +1774,7 @@
         
         
         <div class="project-card" id="projectCard6">
-          <img src="accesspaper.png" alt="AccessPaper" class="project-img" loading="eager">
+          <img src="images/accesspaper.png" alt="AccessPaper" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">AccessPaper</h3>
             <p class="project-description">
@@ -1825,7 +1795,7 @@
        
 
                 <div class="project-card" id="projectCard6">
-          <img src="R.png" alt="CritiplotR" class="project-img" loading="eager">
+          <img src="images/R.png" alt="CritiplotR" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">'critiplotR'</h3>
             <p class="project-description">
@@ -1940,8 +1910,8 @@
         <span>Made with 🧡 while sipping ☕</span>
       </div>
       <div class="footer-right">
-        <span>Copyright © Vihaan Sahu 2025 – Apache 2.0 License</span>
-        <span>Last Updated: 4:59AM. May 7 , 2026</span>
+        <span>© Vihaan Sahu 2025 – Apache 2.0 License</span>
+        <span>Last Updated: 8:15PM. July 3, 2026</span>
       </div>
     </div>
   </footer>
