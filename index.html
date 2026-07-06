@@ -5,40 +5,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description"
-    content="Vihaan (Aurumz) - Medical Student, Researcher & Developer. Explore projects like ReviewAid, Critiplot, NOS-TLPlot and more.">
-  <meta name="keywords"
-    content="Vihaan Sahu, Aurumz, Critiplot, NOS-TLPlot, Snowih, ReviewAid, medical student, developer, AI, research tools, systematic review, web development, Python, HTML">
+
+  <title>Home / Aurumz</title>
+  <meta name="description" content="Vihaan Sahu (Aurumz) - Medical Student, Researcher & Developer. Explore open-source academic projects like ReviewAid, Critiplot, NOS-TLPlot, and more.">
+  <meta name="keywords" content="Vihaan Sahu, Aurumz, Critiplot, NOS-TLPlot, Snowih, ReviewAid, medical student, developer, AI, research tools, systematic review, web development, Python, HTML">
   <meta name="author" content="Vihaan S (Aurumz)">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  
 
-  <meta property="og:title" content="Aurumz web">
-  <meta property="og:description" content="Medical Student, Researcher & Developer.">
+  <link rel="canonical" href="https://aurumz-rgb.github.io/index.html" />
+
+
+  <meta property="og:title" content="Vihaan (Aurumz) - Medical Student, Researcher & Developer.">
+  <meta property="og:description" content="Medical Student, Researcher & Developer. Explore open-source academic projects and tools.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aurumz-rgb.github.io/index.html">
   <meta property="og:image" content="https://aurumz-rgb.github.io/assets/web-banner.png">
-  <meta property="og:image:alt" content="Banner">
-
+  <meta property="og:image:alt" content="Aurumz Web Banner">
+  
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Aurumz web">
+  <meta name="twitter:title" content="Vihaan (Aurumz)'s personal Website.' ">
   <meta name="twitter:description" content="Medical Student, Researcher & Developer.">
   <meta name="twitter:image" content="https://aurumz-rgb.github.io/assets/web-banner.png">
   <meta name="twitter:image:alt" content="Aurumz Banner">
 
-  <title>Website / Aurumz </title>
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
 
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
     as="style">
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
   <link rel="preload" href="assets/banner1.png" as="image">
   <link rel="preload" href="assets/logo-official.png" as="image">
-
 
   <link rel="preload" href="images/reviewaid.png" as="image">
   <link rel="preload" href="images/critiplot.png" as="image">
@@ -50,1293 +51,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    :root {
-      --bg-primary: #0a0a0f;
-      --bg-secondary: #14141a;
-      --bg-card: rgba(20, 20, 26, 0.7);
-      --text-primary: #f5f5f5;
-      --text-secondary: #b8b8c8;
-      --accent: #FF9B45;
-      --accent-light: #ffb366;
-      --accent-dark: #e0852f;
-      --border-color: rgba(255, 155, 69, 0.2);
-      --button-grey: #4d6281;
-      --button-grey-hover: #3a4961;
-
-      --font-primary: 'Open Sans', sans-serif;
-      --font-heading: 'Open Sans', sans-serif;
-
-      --spacing-xs: 0.5rem;
-      --spacing-sm: 2rem;
-      --spacing-md: 2rem;
-      --spacing-lg: 3.5rem;
-      --spacing-xl: 5rem;
-      --spacing-xxl: 8rem;
-
-      --border-radius: 12px;
-      --border-radius-lg: 20px;
-
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --transition-slow: all 0.6s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-    
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-primary);
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-
-    .loader-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--bg-primary);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
-
-    .loader {
-      width: 50px;
-      height: 50px;
-      border: 5px solid rgba(255, 155, 69, 0.3);
-      border-radius: 50%;
-      border-top-color: var(--accent);
-      animation: spin 1s ease-in-out infinite;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: var(--font-heading);
-      font-weight: 600;
-      line-height: 1.2;
-      margin-bottom: var(--spacing-sm);
-    }
-
-    h1 {
-      font-size: clamp(1.8rem, 6vw, 3.5rem);
-      letter-spacing: -1px;
-    }
-
-    h2 {
-      font-size: clamp(1.6rem, 5vw, 2.5rem);
-      color: var(--accent);
-      position: relative;
-      display: inline-block;
-      margin-bottom: var(--spacing-lg);
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent);
-    }
-
-    h3 {
-      font-size: clamp(1.3rem, 4vw, 1.6rem);
-      color: var(--text-primary);
-      margin-bottom: var(--spacing-sm);
-    }
-
-    p {
-      margin-bottom: var(--spacing-md);
-      color: var(--text-secondary);
-      font-size: clamp(0.9rem, 2vw, 1rem);
-      font-weight: 300;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    a:hover {
-      color: var(--accent-light);
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--spacing-md);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 1.8rem;
-      background-color: var(--accent);
-      color: var(--bg-primary);
-      border: none;
-      border-radius: 6px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: var(--transition);
-      text-align: center;
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
-      letter-spacing: 1px;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      min-height: 44px;
-    }
-
-    .btn:hover {
-      background-color: #a3632b;
-      transform: none;
-      box-shadow: none;
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      border: 2px solid var(--accent);
-      color: var(--accent);
-    }
-
-    .btn-outline:hover {
-      background-color: #cc7a36;
-      color: var(--bg-primary);
-      transform: none;
-      box-shadow: none;
-    }
-
-    .project-links .btn {
-      background-color: var(--button-grey);
-      color: white;
-    }
-
-    .project-links .btn:hover {
-      background-color: var(--button-grey-hover);
-    }
-
-    .project-links .btn-outline {
-      background-color: var(--button-grey);
-      color: white;
-      border: 2px solid var(--button-grey);
-    }
-
-    .project-links .btn-outline:hover {
-      background-color: var(--button-grey-hover);
-      color: white;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: var(--spacing-md) 0;
-      background-color: rgba(10, 10, 15, 0.85);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      transition: var(--transition);
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: clamp(1.2rem, 4vw, 1.5rem);
-      font-weight: 700;
-      color: var(--text-primary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      font-family: var(--font-heading);
-    }
-
-    .logo i {
-      color: var(--accent);
-      margin-right: var(--spacing-xs);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: var(--spacing-lg);
-    }
-
-    .nav-links a {
-      color: var(--text-primary);
-      font-weight: 400;
-      position: relative;
-      font-size: clamp(0.9rem, 2vw, 1rem);
-      letter-spacing: 1px;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: var(--accent);
-      transition: var(--transition);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-      min-width: 44px;
-      min-height: 44px;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: var(--spacing-xl) 0;
-      position: relative;
-      overflow: hidden;
-      background-color: var(--bg-primary);
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: var(--spacing-lg);
-      width: 100%;
-    }
-
-    .hero-images-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 1000px;
-      margin-bottom: var(--spacing-lg);
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .hero-image-left {
-      width: 100%;
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
-      box-shadow: none;
-    }
-
-    .hero-image-left img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hero-logo-right {
-      width: 30%;
-      border-radius: 50%;
-      background-color: var(--bg-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-    }
-
-    .hero-logo-right img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: var(--spacing-md);
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .car-container {
-      position: absolute;
-      bottom: -67px;
-      left: -150px;
-      width: clamp(80px, 15vw, 150px);
-      height: auto;
-      z-index: 10;
-      opacity: 0;
-    }
-
-    .car-gif {
-      width: 100%;
-      height: auto;
-    }
-
-    .plane-gif {
-      position: absolute;
-      top: 35%;
-      left: -600px;
-      width: clamp(260px, 50vw, 500px);
-      height: auto;
-      z-index: 10;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .about {
-      padding: var(--spacing-xxl) 0;
-      background-color: var(--bg-secondary);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .about::before {
-      content: '';
-      position: absolute;
-      top: 20%;
-      right: 5%;
-      width: clamp(80px, 15vw, 150px);
-      height: clamp(80px, 15vw, 150px);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 155, 69, 0.2) 0%, transparent 70%);
-      animation: float 4s ease-in-out infinite;
-      z-index: 1;
-    }
-
-    .about::after {
-      content: '';
-      position: absolute;
-      bottom: 20%;
-      right: 15%;
-      width: clamp(60px, 10vw, 100px);
-      height: clamp(60px, 10vw, 100px);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 155, 69, 0.15) 0%, transparent 70%);
-      animation: float 5s ease-in-out infinite reverse;
-      z-index: 1;
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0) rotate(0deg);
-      }
-
-      50% {
-        transform: translateY(-40px) rotate(180deg);
-      }
-    }
-
-    .about-content {
-      position: relative;
-      z-index: 2;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .about-text {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-text p {
-      font-size: clamp(1rem, 3vw, 1.5rem);
-      line-height: 1.8;
-      margin-bottom: var(--spacing-md);
-    }
-
-
-
-    
   
-
-
-    .tech-stack-wrapper {
-      margin-top: var(--spacing-lg);
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .tech-stack-title {
-      font-size: 1.8rem;
-      color: var(--text-primary);
-      text-align: center;
-      margin-bottom: var(--spacing-md);
-      position: relative;
-      display: inline-block;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .tech-stack-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent);
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .tech-item {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius);
-      padding: 1.5rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      transition: var(--transition);
-      cursor: default;
-    }
-
-    .tech-item:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .tech-icon {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-      transition: var(--transition);
-    }
-
-    .tech-item:hover .tech-icon {
-      transform: scale(1.1);
-      color: var(--accent-light);
-    }
-
-    .tech-name {
-      font-weight: 600;
-      color: var(--text-primary);
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
-      line-height: 1.2;
-    }
-
-    .tech-type {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 500;
-    }
-
-    @media (max-width: 768px) {
-      .tech-grid {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        gap: 0.8rem;
-      }
-      .tech-item {
-        padding: 1rem 0.5rem;
-      }
-      .tech-icon {
-        font-size: 2rem;
-      }
-      .tech-name {
-        font-size: 0.9rem;
-      }
-    }
-
-    .projects {
-      padding: var(--spacing-xl) 0;
-      background-color: var(--bg-primary);
-      position: relative;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 155, 69, 0.1) 0%, rgba(10, 10, 15, 0) 70%);
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: var(--spacing-lg);
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: var(--spacing-lg);
-    }
-
-    .project-card {
-      background-color: var(--bg-card);
-      backdrop-filter: blur(10px);
-      border-radius: var(--border-radius-lg);
-      overflow: hidden;
-      transition: var(--transition);
-      border: 1px solid var(--border-color);
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .project-card:hover {
-      transform: translateY(-15px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      border-color: var(--border-color);
-    }
-
-    .project-img {
-      height: 200px;
-      width: 100%;
-      object-fit: cover;
-      transition: none;
-      background-color: var(--bg-secondary);
-    }
-
-    .project-card:hover .project-img {
-      transform: none;
-    }
-
-    .project-content {
-      padding: var(--spacing-md);
-    }
-
-    .project-title {
-      font-size: clamp(1.1rem, 3vw, 1.3rem);
-      margin-bottom: var(--spacing-xs);
-      color: var(--text-primary);
-    }
-
-    .project-description {
-      margin-bottom: var(--spacing-md);
-      color: var(--text-secondary);
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
-      line-height: 1.6;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--spacing-xs);
-      margin-bottom: var(--spacing-md);
-    }
-
-    .tag {
-      background-color: rgba(255, 155, 69, 0.15);
-      color: var(--accent);
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: clamp(0.7rem, 1.8vw, 0.8rem);
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-
-    .project-links {
-      display: flex;
-      gap: var(--spacing-sm);
-    }
-
-    .contact {
-      padding: var(--spacing-xl) 0;
-      background-color: var(--bg-secondary);
-      position: relative;
-    }
-
-    .contact-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: var(--spacing-md);
-      margin-top: var(--spacing-lg);
-      margin-bottom: var(--spacing-lg);
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      padding: 1rem 1.5rem;
-      background-color: var(--bg-card);
-      backdrop-filter: blur(10px);
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-      border: 1px solid var(--border-color);
-      min-height: 60px;
-    }
-
-    .contact-link:hover {
-      background-color: rgba(255, 155, 69, 0.1);
-      transform: translateY(-8px);
-      border-color: var(--accent);
-    }
-
-    .contact-link i {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      color: var(--accent);
-    }
-
-    .contact-link span {
-      font-size: clamp(0.85rem, 2vw, 1rem);
-      font-weight: 500;
-    }
-
-    .scroll-to-top-box {
-      position: absolute;
-      bottom: -60px;
-      left: 0;
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      padding: 10px 15px;
-      border-radius: 0 var(--border-radius) var(--border-radius) 0;
-      box-shadow: none;
-      cursor: pointer;
-      z-index: 100;
-      display: none;
-      transition: var(--transition);
-      font-weight: 500;
-      font-size: 1rem;
-      opacity: 0;
-      border: none;
-      opacity: 0.8;
-      min-height: 44px;
-      min-width: 44px;
-    }
-
-    .scroll-to-top-box.show {
-      display: block;
-      opacity: 0.8;
-    }
-
-    .scroll-to-top-box:hover {
-      background-color: rgba(30, 30, 40, 0.9);
-      opacity: 1;
-    }
-
-    footer {
-      padding: var(--spacing-md) 0;
-      background-color: var(--bg-primary);
-      border-top: 1px solid var(--border-color);
-      text-align: center;
-      position: relative;
-      z-index: 10;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: var(--spacing-sm);
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--spacing-lg);
-    }
-
-    .footer-left {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      justify-content: flex-start;
-      flex: 1;
-      margin-left: 0;
-    }
-
-    .footer-right {
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm);
-      justify-content: flex-end;
-      flex: 1;
-      margin-right: 0;
-    }
-
-    .end-message {
-  color: #888888; 
-  text-align: center; 
-  font-size: 0.9rem;
-  margin-top: 5rem;
-
-  opacity: 0.7;
-}
-
-    .emoji {
-      font-size: clamp(1rem, 3vw, 1.5rem);
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes carRace {
-      0% {
-        left: -150px;
-      }
-
-      100% {
-        left: 110%;
-      }
-    }
-
-    @keyframes vibrate {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-
-      25% {
-        transform: translateY(-1.5px) rotate(-0.75deg);
-      }
-
-      50% {
-        transform: translateY(1.5px) rotate(0.75deg);
-      }
-
-      75% {
-        transform: translateY(-1.5px) rotate(-0.75deg);
-      }
-
-      100% {
-        transform: translateY(0) rotate(0deg);
-      }
-    }
-
-    @keyframes flyPlane {
-      0% {
-        left: -600px;
-        top: 15%;
-        transform: rotate(0deg);
-      }
-
-      15% {
-        top: 13%;
-        transform: rotate(9deg);
-      }
-
-      25% {
-        top: 20%;
-        transform: rotate(15deg);
-      }
-
-      35% {
-        top: 15%;
-        transform: rotate(-10deg);
-      }
-
-      50% {
-        top: 30%;
-        transform: rotate(-10deg);
-      }
-
-      75% {
-        top: 50%;
-        transform: rotate(5deg);
-      }
-
-      100% {
-        left: 110%;
-        top: 60%;
-        transform: rotate(0deg);
-      }
-    }
-
-
-    @media (min-width: 1600px) {
-      .container {
-        max-width: 1400px;
-      }
-
-      .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      }
-    }
-
-
-    @media (max-width: 1200px) {
-      .container {
-        padding: 0 var(--spacing-md);
-      }
-    }
-
-
-    @media (max-width: 992px) {
-      .projects-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      }
-
-      .hero-images-container {
-        flex-direction: column-reverse;
-        gap: var(--spacing-md);
-        align-items: center;
-      }
-
-      .hero-image-left {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-        transform: none;
-      }
-
-      .hero-logo-right {
-        display: none;
-      }
-
-
-      .car-container {
-        bottom: calc(-67px * 1.1);
-        width: clamp(120px, 20vw, 200px);
-      }
-
-
-      .plane-gif {
-        top: 25%;
-        left: -550px;
-        width: clamp(400px, 70vw, 650px);
-      }
-
-      @keyframes carRace {
-        0% {
-          left: -150px;
-        }
-
-        100% {
-          left: 100%;
-        }
-      }
-
-      @keyframes flyPlane {
-        0% {
-          left: -550px;
-          top: 15%;
-          transform: rotate(0deg);
-        }
-
-        15% {
-          top: 13%;
-          transform: rotate(9deg);
-        }
-
-        25% {
-          top: 20%;
-          transform: rotate(15deg);
-        }
-
-        35% {
-          top: 15%;
-          transform: rotate(-10deg);
-        }
-
-        50% {
-          top: 30%;
-          transform: rotate(-10deg);
-        }
-
-        75% {
-          top: 50%;
-          transform: rotate(5deg);
-        }
-
-        100% {
-          left: 100%;
-          top: 60%;
-          transform: rotate(0deg);
-        }
-      }
-    }
-
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: rgba(10, 10, 15, 0.95);
-        padding: var(--spacing-md);
-        gap: var(--spacing-md);
-        border-top: 1px solid var(--border-color);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-      }
-
-      .hero-buttons .btn {
-        width: 200px;
-      }
-
-      .contact-links {
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: var(--spacing-xl);
-      }
-
-      .contact-link {
-        width: 100%;
-        max-width: 300px;
-      }
-
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-left,
-      .footer-right {
-        justify-content: center;
-        margin: 0;
-      }
-    }
-
-
-    @media (max-width: 576px) {
-      .container {
-        padding: 0 var(--spacing-sm);
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      h3 {
-        font-size: 1.4rem;
-      }
-
-      header {
-        padding: 0.8rem 0;
-      }
-
-
-      .hero-images-container {
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 2rem;
-      }
-
-      .hero-image-left {
-        width: 180%;
-        max-width: 700px;
-        margin: 0 auto;
-        transform: translateX(1%);
-      }
-
-
-      .hero-logo-right {
-        display: none;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card {
-        max-width: 100%;
-      }
-
-      .project-img {
-        height: 200px;
-        object-fit: cover;
-      }
-
-      .btn {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.85rem;
-      }
-
-      .contact-link {
-        padding: 0.8rem 1.2rem;
-      }
-
-      .contact-link i {
-        font-size: 1.5rem;
-      }
-
-      .contact-link span {
-        font-size: 0.9rem;
-      }
-
-      .about-text p {
-        font-size: 1.1rem;
-      }
-
-      .about {
-        padding: var(--spacing-xl) 0;
-      }
-
-      .footer-content {
-        padding: 0 var(--spacing-md);
-      }
-
-      .scroll-to-top-box {
-        left: 0;
-        right: 0;
-        text-align: center;
-        bottom: -80px;
-        border-radius: 0;
-        width: auto;
-        max-width: 200px;
-        margin: 0 auto;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-   
-
-
-      .car-container {
-        width: 140px;
-        bottom: calc(-67px * 0.91);
-        left: -150px;
-      }
-
-
-      .plane-gif {
-        top: 20%;
-        left: -450px;
-        width: clamp(350px, 75vw, 600px);
-      }
-
-      @keyframes carRace {
-        0% {
-          left: -150px;
-        }
-
-        100% {
-          left: 100%;
-        }
-      }
-
-      @keyframes flyPlane {
-        0% {
-          left: -450px;
-          top: 20%;
-          transform: rotate(0deg);
-        }
-
-        15% {
-          top: 18%;
-          transform: rotate(9deg);
-        }
-
-        25% {
-          top: 25%;
-          transform: rotate(15deg);
-        }
-
-        35% {
-          top: 18%;
-          transform: rotate(-10deg);
-        }
-
-        50% {
-          top: 35%;
-          transform: rotate(-10deg);
-        }
-
-        75% {
-          top: 55%;
-          transform: rotate(5deg);
-        }
-
-        100% {
-          left: 100%;
-          top: 65%;
-          transform: rotate(0deg);
-        }
-      }
-    }
-
-
-    @media (max-width: 380px) {
-      .container {
-        padding: 0 0.5rem;
-      }
-
-      .hero-images-container {
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 1.5rem;
-      }
-
-      .hero-image-left {
-        width: 200%;
-        max-width: 500px;
-        margin: 0 auto;
-        transform: translateX(1%);
-      }
-
-
-      .hero-logo-right {
-        display: none;
-      }
-
-      .project-card {
-        margin: 0 auto;
-      }
-
-      .project-content {
-        padding: 1rem;
-      }
-
-      .project-links {
-        flex-direction: column;
-      }
-
-      .project-links .btn {
-        width: 100%;
-      }
-
-      .contact-link {
-        padding: 0.7rem 1rem;
-      }
-
-      .footer-content {
-        font-size: 0.8rem;
-      }
-
-      .project-img {
-        height: 180px;
-      }
-
-
-      .car-container {
-        width: 120px;
-        bottom: calc(-67px * 0.86);
-        left: -120px;
-      }
-
-      @keyframes carRace {
-        0% {
-          left: -120px;
-        }
-
-        100% {
-          left: 100%;
-        }
-      }
-
-      .plane-gif {
-        top: 15%;
-        left: -350px;
-        width: clamp(300px, 80vw, 550px);
-      }
-
-      .contact-heading {
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  gap: 20px; 
-}
-
-.contact-heading h2 {
-  margin: 0;
-}
-
-      @keyframes flyPlane {
-        0% {
-          left: -350px;
-          top: 25%;
-          transform: rotate(0deg);
-        }
-
-        15% {
-          top: 23%;
-          transform: rotate(9deg);
-        }
-
-        25% {
-          top: 30%;
-          transform: rotate(15deg);
-        }
-
-        35% {
-          top: 23%;
-          transform: rotate(-10deg);
-        }
-
-        50% {
-          top: 40%;
-          transform: rotate(-10deg);
-        }
-
-        75% {
-          top: 60%;
-          transform: rotate(5deg);
-        }
-
-        100% {
-          left: 100%;
-          top: 70%;
-          transform: rotate(0deg);
-        }
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -1348,17 +64,16 @@
   <header>
     <div class="container">
       <nav>
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
           <i class="fas fa-code"></i>
         </a>
         <button class="mobile-menu-btn" id="mobileMenuBtn">
           <i class="fas fa-bars"></i>
         </button>
         <div class="nav-links" id="navLinks">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#prototypes">Prototypes</a>
-          <a href="#contact">Contact</a>
+          <a href="index.html">Home</a>
+          <a href="blog.html">Weblog</a>
+          <a href="graffiti.html">Graffiti</a>
         </div>
       </nav>
     </div>
@@ -1372,7 +87,7 @@
             <img src="assets/banner1.png" alt="Hello I am Vihaan aka aurumz" loading="eager">
           </div>
           <div class="hero-logo-right">
-            <img src="assets/logo-official.png" alt="Logo" loading="eager">
+            <img src="assets/logo-official.png" alt="Aurumz Logo" loading="eager">
           </div>
         </div>
         <div class="hero-buttons" id="heroButtons">
@@ -1389,31 +104,45 @@
   </section>
 
   <section class="about" id="about">
-
-
     <div class="container">
       <div class="about-content" id="aboutContent">
-        <h2>About Me</h2>
-        <div class="about-text">
-          <p>
-            A Medical Student with a keen interest in Development, Open Access and Animation. I've also found an
-            interest in Research, Evidence synthesis based Research methodologies, Evidence synthesis and open-source
-            Research Softwares.
-          </p>
-          <p>
-            I've also caught a massive interest in developmental AI in healthcare
-            fields like Radiology. Since my projects are self-funded, I host them using Streamlit and ShinyApps. Support
-            and Sponsorships made via my Github Sponsors is one of the best ways for supporting my work.
-          </p>
-        </div>
         
+        <div class="about-text">
+          <h2>The Academic Side</h2>
+          <p>
+            I am Vihaan, from India. I am 20 and am studying at SEU, Tbilisi, Georgia. I am a medical student who does software development, open access and animation. I do research too, particularly evidence synthesis methodologies, medicine based evidence synthesis like SRMAs, NMA. I make open-source research softwares which I believe might help research scientists reduce their workload and avoid the hassle of manual work! 
+          </p>
+
+          <p>
+            As my projects are self-funded, they are hosted using Streamlit and ShinyApps. Support through GitHub Sponsors is highly appreciated and directly contributes to the sustainability of my work.
+          </p>
+
+        </div>
+
+<div class="about-text" style="margin-top: var(--spacing-xxl);">
+  <h2>Beyond The Academics</h2>
+
+  <p>
+     “Aurumz” is just an online username, I made in 5th grade from the Latin word (Aurum) for gold. I've grinded countless hours on Adobe Flash/Animate, Illustrator, After Effects, and Premiere Pro.
+  </p>
+
+  <p>
+    I’ve basically used macOS my whole life and barely know how to use Windows. Other than that, I like to experiment with tech softwares like modified macOS Softwares, Adobe Softwares etc. as well as hosting local MCPs and connecting it with AI and actually exploiting it! (hehe).
+  </p>
+
+  <p>
+    I love marine aquariums. My favourite fish is the lionfish, especially pterois Radiata and Antennata (colours) and pterois Volitans (size). One day I’d love to build huge saltwater aquariums, each for lionfish, tangs + corals, and maybe even a baby Blacktip Reef Shark (If I end up rich, def not on a physician's salary 😭).
+  </p>
+
+  <p>
+    I cook food during my free time with food being 10/10 at a p-value of 0.01. There’s a lot more stuff I’m into too, but you’ll have to know me a bit to find that out!
+  </p>
+
+</div>
 
         <div class="tech-stack-wrapper">
-          <h3 class="tech-stack-title">What I usually use:</h3>
+          <h3 class="tech-stack-title">Technology Stack</h3>
           <div class="tech-grid">
-            
-  
-
             <div class="tech-item">
               <img src="https://cdn.simpleicons.org/javascript" width="30" class="tech-icon">
               <span class="tech-name">JavaScript</span>
@@ -1442,7 +171,6 @@
               <span class="tech-type">Language</span>
             </div>
 
-
             <div class="tech-item">
               <img src="https://streamlit.io/images/brand/streamlit-mark-color.png" width="30" class="tech-icon">
               <span class="tech-name">Streamlit</span>
@@ -1454,8 +182,6 @@
               <span class="tech-type">Web Framework</span>
             </div>
 
-
-       
             <div class="tech-item">
              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32"><path fill="#55a1bf" d="M27.9 6h-9.8l-2 4H5v17h25V6Zm.1 4h-7.8l1-2H28Z"/><path fill="#c6e9fa" fill-rule="evenodd" d="M22.258 25.522a15.7 15.7 0 0 1-7.5-1.516l.473-.75a15.26 15.26 0 0 0 7.027 1.3c0 .082.1-1.533.245-2.413H19.1a21.65 21.65 0 0 1 3.033-9.408h-10.2v15.526h10.716a22 22 0 0 1-.391-2.739"/><path fill="#00adee" fill-rule="evenodd" d="M23.285 24.5a10.7 10.7 0 0 0 4.484-1.3l.587.75a12.8 12.8 0 0 1-5.071 1.517a13.6 13.6 0 0 0 .441 2.8h7.337V12.739h-7.81a19.34 19.34 0 0 0-2.968 8.381h3.506a15.4 15.4 0 0 0-.506 3.375Zm-6.717-9.413h.995v2.299h-.995z"/><path fill="#231f20" fill-rule="evenodd" d="M24.851 15.087h.994v2.299h-.994z"/><path fill="#231f20" fill-rule="evenodd" d="M23.285 24.5a10.7 10.7 0 0 0 4.484-1.3l.587.75a12.8 12.8 0 0 1-5.071 1.517a12.3 12.3 0 0 0 1.354 5.087l-.848.446c-1.549-2.445-1.826-5.739-1.288-8.853H19.1A21.5 21.5 0 0 1 24.084 10l.734.636a19.1 19.1 0 0 0-4.533 10.484h3.506a15.4 15.4 0 0 0-.506 3.375Z"/><path fill="#00adee" fill-rule="evenodd" d="M22.258 24.56v.962a15.7 15.7 0 0 1-7.5-1.516l.473-.75a15.26 15.26 0 0 0 7.027 1.3Z"/></svg>
               <span class="tech-name">MacOS</span>
@@ -1478,7 +204,6 @@
               <span class="tech-name">Docker</span>
               <span class="tech-type">Container</span>
             </div>
-            
 
             <div class="tech-item">
              <img src="https://api.iconify.design/logos/adobe-animate.svg" width="30" class="tech-icon">
@@ -1510,7 +235,7 @@
             </div>
             <div class="tech-item">
              <svg xmlns="http://www.w3.org/2000/svg" width="32.77" height="32" viewBox="0 0 256 250"><path fill="#25012a" d="M45.333 0h165.334C235.733 0 256 20.267 256 45.333v158.934c0 25.066-20.267 45.333-45.333 45.333H45.333C20.267 249.6 0 229.333 0 204.267V45.333C0 20.267 20.267 0 45.333 0"/><path fill="#b770b9" d="M60.8 175.04V65.28c0-.747.32-1.173 1.067-1.173l1.548-.003l1.198-.01l.845-.016l.9-.023l.967-.034l.515-.021c.96-.04 1.935-.065 2.93-.086l3.055-.064q.521-.012 1.051-.028l1.07-.035q1.44-.052 2.952-.08l3.093-.055l2.141-.047l1.095-.032c2.204-.07 4.361-.094 6.502-.102l3.204-.004c8.747 0 16 1.066 21.974 3.306A38.1 38.1 0 0 1 131.2 75.52a34 34 0 0 1 7.787 12.16c1.6 4.48 2.453 9.067 2.453 13.867q0 13.76-6.4 22.72c-4.267 5.973-10.24 10.453-17.173 13.013c-7.012 2.578-14.721 3.56-23.128 3.623H91.69l-1.187-.012l-.761-.018l-.448-.019l-.402-.024l-.359-.03a16 16 0 0 0-.692-.052l-.52-.023l-.57-.015l-.951-.013l-1.853-.004v34.24c.106.747-.427 1.387-1.174 1.494H62.08c-.853 0-1.28-.427-1.28-1.387m23.253-90.347v35.84l1.254.09a43 43 0 0 0 2.906.124h5.654c4.16 0 8.32-.64 12.266-1.92c3.414-.96 6.4-2.987 8.747-5.654c2.24-2.666 3.307-6.293 3.307-10.986a17.56 17.56 0 0 0-2.454-9.494c-1.737-2.657-4.161-4.727-7.082-5.928l-.384-.152c-3.947-1.6-8.214-2.24-12.587-2.133l-2.466.003l-1.159.007l-1.107.015l-1.051.024q-.769.02-1.47.058a37 37 0 0 0-.688-.028l-.639-.014l-.3-.002l-.566.003l-.514.014l-.238.01l-.437.025l-.384.03l-.173.016l-.303.035pm72.32 6.187h18.667c1.007 0 1.825.666 2.182 1.549l.058.158c.32.853.533 1.706.64 2.666c.213 1.067.427 2.24.533 3.307l.09 1.032c.07.881.124 1.818.124 2.808a39.7 39.7 0 0 1 10.82-8.849l.593-.324c4.907-2.774 10.56-4.16 16.213-4.16c.747-.107 1.387.426 1.494 1.173v21.227c0 .853-.534 1.173-1.707 1.173c-3.584-.1-7.26.173-10.77.903l-.75.164q-4.64.96-8.96 2.88c-2.027.96-3.947 2.24-5.44 3.946v54.4c0 1.067-.427 1.494-1.387 1.494H157.76c-.853.106-1.6-.427-1.707-1.28v-59.52c0-2.56 0-5.227-.106-8l-.064-2.08l-.086-4.16q-.024-1.04-.064-2.08c0-2.454-.213-4.8-.426-7.254c-.107-.533.213-1.066.746-1.173c0-.091.157-.104.269-.04z"/></svg>
-              <span class="tech-name">Adobe Adobe Premiere Pro</span>
+              <span class="tech-name">Adobe Premiere Pro</span>
               <span class="tech-type">Video Editing</span>
             </div>
             <div class="tech-item">
@@ -1527,27 +252,21 @@
   <section class="projects" id="projects">
     <div class="container">
       <div class="section-header" id="sectionHeader">
-        
-    
-        <h2>My Projects</h2>
-       
-        <p style="font-size: 1.2rem;">Here are some of my recent Open Source Research projects and Softwares</p>
-   
+        <h2>Academic Projects</h2>
+        <p style="font-size: 1.2rem;">A collection of open-source research software and academic tools.</p>
       </div>
       <div class="projects-grid">
         <div class="project-card" id="projectCard1">
-          <img src="images/reviewaid.png" alt="ReviewAid" class="project-img" loading="eager">
+          <img src="images/reviewaid.png" alt="ReviewAid AI Screening Tool" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">ReviewAid</h3>
             <p class="project-description">
-              An advanced AI-powered tool that rapidly screens and extracts full-text data from multiple research
-              articles, determining inclusion or exclusion based on your research criteria using any AI model as per
-              user's configuration.
+              An advanced AI-powered tool designed to rapidly screen and extract full-text data from research articles, automating inclusion and exclusion based on user-defined criteria and configurable AI models.
             </p>
             <div class="project-tags">
-              <span class="tag">AI-based</span>
-              <span class="tag">Full text Screener</span>
-              <span class="tag">Data Extractor</span>
+              <span class="tag">AI-Powered</span>
+              <span class="tag">Full-Text Screening</span>
+              <span class="tag">Data Extraction</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/aurumz-rgb/reviewaid" target="_blank" class="btn btn-outline">GitHub</a>
@@ -1556,20 +275,19 @@
           </div>
         </div>
 
-
         <div class="project-card" id="projectCard2">
-          <img src="images/critiplot.png" alt="Critiplot" class="project-img" loading="eager">
+          <img src="images/critiplot.png" alt="Critiplot Visualization Tool" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Critiplot</h3>
             <p class="project-description">
-              A Critical Appraisal Plot Visualiser for Risk of Bias Assessments in Systematic Reviews and Meta-Analyses.
+              A visualization tool for critical appraisal and risk-of-bias assessments in systematic reviews and meta-analyses.
             </p>
             <div class="project-tags">
+              <span class="tag">Visualization</span>
               <span class="tag">NOS</span>
               <span class="tag">GRADE</span>
               <span class="tag">ROBIS</span>
-              <span class="tag">JBI Case Reports</span>
-              <span class="tag">JBI Case Series</span>
+              <span class="tag">JBI</span>
               <span class="tag">Risk-of-Bias</span>
             </div>
             <div class="project-links">
@@ -1579,23 +297,18 @@
           </div>
         </div>
 
-
-
-
         <div class="project-card" id="projectCard22">
-          <img src="images/evidencesynthesis-tools.png" alt="Evidence Synthesis Tools" class="project-img" loading="eager">
+          <img src="images/evidencesynthesis-tools.png" alt="Evidence Synthesis Tools Directory" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Evidence Synthesis Tools</h3>
             <p class="project-description">
-              A curated directory of strictly open-source software / tools for Evidence Synthesis.
+              A curated directory dedicated to strictly open-source software and tools for evidence synthesis.
             </p>
             <div class="project-tags">
-              <span class="tag">softwares</span>
-              <span class="tag">tools</span>
-              <span class="tag">evidence-synthesis</span>
-              <span class="tag">open source</span>
-              <span class="tag">non properietary</span>
-              <span class="tag">open science</span>
+              <span class="tag">Directory</span>
+              <span class="tag">Evidence Synthesis</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">Open Science</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/evidencesynthesis-tools/evidencesynthesis-tools.github.io" target="_blank"
@@ -1605,21 +318,16 @@
           </div>
         </div>
 
-
-
-
         <div class="project-card" id="projectCard3">
-          <img src="images/NOS-TLPlot.png" alt="NOS-TLPlot" class="project-img" loading="eager">
+          <img src="images/NOS-TLPlot.png" alt="NOS-TLPlot Visualizer" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">NOS-TLPlot</h3>
             <p class="project-description">
-              A Traffic light Plot Visualiser for Newcastle–Ottawa Scale (NOS) risk-of-bias assessments for
-              Meta-analysis. Generates 12 whole different plots reserved only for non randomized studies for NOS
-              risk-of-bias domains unlike Critiplot.
+              A traffic-light plot visualizer for Newcastle–Ottawa Scale (NOS) risk-of-bias assessments in meta-analyses. Generates 12 distinct plots dedicated specifically to non-randomized studies.
             </p>
             <div class="project-tags">
               <span class="tag">Visualization</span>
-              <span class="tag">Newcastle–Ottawa Scale (NOS)</span>
+              <span class="tag">Newcastle-Ottawa Scale</span>
               <span class="tag">Risk-of-Bias</span>
             </div>
             <div class="project-links">
@@ -1630,65 +338,180 @@
         </div>
 
         <div class="project-card" id="projectCard5">
-          <img src="images/critiplot-package.png" alt="Critiplot" class="project-img" loading="eager">
+          <img src="images/critiplot-package.png" alt="Critiplot Python Package" class="project-img" loading="eager">
           <div class="project-content">
             <h3 class="project-title">Critiplot Python Package</h3>
             <p class="project-description">
-              A Critical Appraisal Plot Visualiser for Risk of Bias Assessments in Systematic Reviews and Meta-Analyses.
+              The Python package version of Critiplot, enabling programmatic generation of critical appraisal plots for risk-of-bias assessments.
             </p>
             <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">PyPI</span>
               <span class="tag">NOS</span>
               <span class="tag">GRADE</span>
-              <span class="tag">ROBIS</span>
               <span class="tag">MMAT</span>
-              <span class="tag">JBI Case Reports</span>
-              <span class="tag">JBI Case Series</span>
               <span class="tag">Risk-of-Bias</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/aurumz-rgb/critiplot-package" target="_blank"
                 class="btn btn-outline">GitHub</a>
               <a href="https://pypi.org/project/critiplot/" target="_blank" class="btn">PyPI</a>
-
             </div>
           </div>
         </div>
 
-                <div class="project-card" id="projectCard22222">
-          <img src="images/awesome.png" alt="Evidence Synthesis Tools" class="project-img" loading="eager">
+        <div class="project-card" id="projectCard22222">
+          <img src="images/awesome.png" alt="Awesome Evidence Synthesis List" class="project-img" loading="eager">
           <div class="project-content">
-            <h3 class="project-title"> Awesome Evidence Synthesis</h3>
+            <h3 class="project-title">Awesome Evidence Synthesis</h3>
             <p class="project-description">
-              An awesome curated directory of strictly open-source software / tools for Evidence Synthesis.
+              An expertly curated list of open-source software and tools designed for evidence synthesis methodologies.
             </p>
             <div class="project-tags">
-              <span class="tag">Awesome</span>
-              <span class="tag">evidence-synthesis</span>
-              <span class="tag">open source</span>
-              <span class="tag">non properietary</span>
-              <span class="tag">open science</span>
+              <span class="tag">Awesome-List</span>
+              <span class="tag">Evidence Synthesis</span>
+              <span class="tag">Open Source</span>
+              <span class="tag">Open Science</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/evidencesynthesis-tools/awesome-evidence-synthesis" target="_blank"
-                class="btn btn-outline">Awesome</a>
+                class="btn btn-outline">GitHub</a>
               <a href="https://awesome-evidence-synthesis.github.io" target="_blank" class="btn">Website</a>
             </div>
           </div>
         </div>
 
-        <div class="project-card" id="projectCard_rikai">
-          <img src="images/rikai.png" alt="RikaiCode" class="project-img" loading="eager">
+        <div class="project-card" id="projectCard_rct">
+          <img src="images/rct-reviewer.png" alt="RCT-Reviewer Machine Learning Tool" class="project-img" loading="eager">
           <div class="project-content">
-            <h3 class="project-title"> RikaiCode.</h3>
+            <h3 class="project-title">RCT-Reviewer</h3>
             <p class="project-description">
-              RikaiCode helps you understand any GitHub or GitLab repo in seconds. It flattens the entire codebase for easy reading, grades code quality from A++ to C, visualizes the project architecture, and scans for potential security issues.
+              A modernized, standalone version of RobotReviewer serving as a third-party reference tool for risk-of-bias assessment in randomized controlled trials (RCTs). Trained on 12,808 RCTs, it provides an objective, data-driven third opinion to resolve disagreements between independent human reviewers in systematic reviews.
             </p>
             <div class="project-tags">
-              <span class="tag">codebase-analysis</span>
-              <span class="tag">developer-tools</span>
-              <span class="tag">repository-flattener</span>
-              <span class="tag">code-documentation</span>
-              <span class="tag">ai-code-review</span>
+              <span class="tag">RCT</span>
+              <span class="tag">Risk-of-Bias</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Systematic Review</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/aurumz-rgb/RCT-Reviewer" target="_blank"
+                class="btn btn-outline">GitHub</a>
+              <a href="https://rct-reviewer.github.io" target="_blank" class="btn">Website</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="prototypes">
+    <div class="container">
+      <div class="section-header" id="prototypesHeader">
+        <h2>Academic Prototypes & Beta Tools</h2>
+        <p style="font-size: 1.2rem;">Ongoing developments and beta versions of academic research tools.</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" id="projectCard4">
+          <img src="images/snowih.png" alt="Snowih AI Snowballing Tool" class="project-img" loading="eager">
+          <div class="project-content">
+            <h3 class="project-title">Snowih</h3>
+            <p class="project-description">
+              An open-source Python tool automating backward snowballing of research papers using AI-based screening. (Currently Under Development)
+            </p>
+            <div class="project-tags">
+              <span class="tag">Snowballing</span>
+              <span class="tag">AI</span>
+              <span class="tag">Python</span>
+              <span class="tag">Evidence Synthesis</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Snowih" target="_blank" class="btn btn-outline">GitHub</a>
+              <a href="https://snowih.github.io" target="_blank" class="btn">Website</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="projectCard6">
+          <img src="images/ReviewAid-legacy.png" alt="ReviewAid Cohere Prototype" class="project-img" loading="eager">
+          <div class="project-content">
+            <h3 class="project-title">ReviewAid (Cohere Prototype)</h3>
+            <p class="project-description">
+              The legacy Cohere implementation of ReviewAid. The source code is archived and no longer maintained, though the repository retains the last commit history.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Legacy</span>
+              <span class="tag">Cohere</span>
+              <span class="tag">Screening</span>
+              <span class="tag">Archived</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/aurumz-rgb/Review_Aid_private" target="_blank" class="btn btn-outline">GitHub</a>
+              <a href="https://reviewaid-legacy.onrender.com" target="_blank" class="btn">Website</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="projectCard7">
+          <img src="images/accesspaper.png" alt="AccessPaper DOI Fetcher" class="project-img" loading="eager">
+          <div class="project-content">
+            <h3 class="project-title">AccessPaper</h3>
+            <p class="project-description">
+              A prototype tool for directly fetching research papers using a DOI. (Beta - Discontinued and no longer hosted).
+            </p>
+            <div class="project-tags">
+              <span class="tag">DOI</span>
+              <span class="tag">Paper Fetcher</span>
+              <span class="tag">Beta</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/aurumz-rgb/AccessPaper" target="_blank" class="btn btn-outline">GitHub</a>
+              <a href="https://accesspaper.vercel.app" target="_blank" class="btn">Website</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="projectCard8">
+          <img src="images/R.png" alt="critiplotR R Package" class="project-img" loading="eager">
+          <div class="project-content">
+            <h3 class="project-title">critiplotR</h3>
+            <p class="project-description">
+              The R package counterpart to Critiplot for generating risk-of-bias visualizations. (Beta - Never launched for production).
+            </p>
+            <div class="project-tags">
+              <span class="tag">R Package</span>
+              <span class="tag">Critical Appraisal</span>
+              <span class="tag">Risk-of-Bias</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/aurumz-rgb/critiplotR" target="_blank" class="btn btn-outline">GitHub</a>
+              <a href="https://github.com/aurumz-rgb/critiplotR/raw/main/critiplotR-manual.pdf" target="_blank" class="btn">Manual</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="experimental">
+    <div class="container">
+      <div class="section-header" id="experimentalHeader">
+        <h2>Experimental & Hobby Projects</h2>
+        <p style="font-size: 1.2rem;">A collection of experimental tools, tech utilities, and personal hobby projects.</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" id="projectCard_rikai">
+          <img src="images/rikai.png" alt="RikaiCode Codebase Analyzer" class="project-img" loading="eager">
+          <div class="project-content">
+            <h3 class="project-title">RikaiCode</h3>
+            <p class="project-description">
+              A developer utility designed to analyze GitHub and GitLab repositories in seconds. It flattens codebases for easy reading, evaluates code quality, visualizes project architecture, and scans for security vulnerabilities.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Developer Tools</span>
+              <span class="tag">Codebase Analysis</span>
+              <span class="tag">Code Review</span>
+              <span class="tag">Architecture</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/aurumz-rgb/RikaiCode" target="_blank"
@@ -1698,156 +521,71 @@
           </div>
         </div>
 
+        <div class="project-card" id="projectCard_pickle">
+          <img src="images/pickle-to-joblib.png" alt="Pickle to Joblib Converter" class="project-img" loading="eager">
+          <div class="project-content">
+            <h3 class="project-title">pickle-to-joblib</h3>
+            <p class="project-description">
+              A lightweight Streamlit utility that converts .pickle, .pkl, and .pck machine learning model files into compressed .joblib formats. It is optimized for reducing model size, improving loading efficiency, and streamlining ML deployment workflows.
+            </p>
+            <div class="project-tags">
+              <span class="tag">ML Deployment</span>
+              <span class="tag">File Conversion</span>
+              <span class="tag">Python</span>
+              <span class="tag">Streamlit</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/RCT-Reviewer/pickle-to-joblib" target="_blank"
+                class="btn btn-outline">GitHub</a>
+              <a href="https://pickle-to-joblib.github.io" target="_blank" class="btn">Website</a>
+            </div>
+          </div>
+        </div>
 
-
+        <div class="project-card" id="projectCard_asphalt">
+          <img src="images/asphalt.png" alt="Asphalt 6 Adrenaline PlayCover macOS" class="project-img" loading="eager">
+          <div class="project-content">
+            <h3 class="project-title">Asphalt 6 Adrenaline PlayCover</h3>
+            <p class="project-description">
+              A repacked build of Asphalt 6: Adrenaline (v1.4.6), modified to run on modern macOS systems via PlayCover. This project involved re-signing and modifying the legacy 32-bit .ipa file to resolve corruption issues. Designed for macOS systems supporting 32-bit applications, it may also function on compatible legacy iOS devices.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Gaming</span>
+              <span class="tag">macOS</span>
+              <span class="tag">PlayCover</span>
+              <span class="tag">Retro</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/aurumz-rgb/Asphalt_6-Adrenaline" target="_blank" class="btn btn-outline">GitHub</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-  <section class="projects" id="prototypes">
-    <div class="container">
-      <div class="section-header" id="prototypesHeader">
-        <h2>My Prototypes</h2>
-        <p style="font-size: 1.2rem;">List of all my Prototypes / Beta tools</p>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card" id="projectCard4">
-          <img src="images/snowih.png" alt="Snowih" class="project-img" loading="eager">
-          <div class="project-content">
-            <h3 class="project-title">Snowih</h3>
-            <p class="project-description">
-              Snowih is an open-source Python tool for automating backward snowballing of research papers (Ai based
-              snowball screening). (UNDER DEVELOPMENT)
-            <div class="project-tags">
-              <span class="tag">Ai based Snowballing</span>
-              <span class="tag">Backend Snowball</span>
-              <span class="tag">Evidence Synthesis Research tool</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Snowih" target="_blank" class="btn btn-outline">GitHub</a>
-              <a href="https://snowih.github.io" target="_blank" class="btn">Website</a>
-            </div>
-          </div>
-        </div>
-
-               <div class="project-card" id="projectCard6">
-          <img src="images/ReviewAid-legacy.png" alt="RA-L" class="project-img" loading="eager">
-          <div class="project-content">
-            <h3 class="project-title">ReviewAid (Cohere Prototype)</h3>
-            <p class="project-description">
-              ReviewAid -- Legacy Cohere version (Source Code was turned private archive, Still Usable, Not Maintained.)
-              However, this points to other Repository which has a last few commit history.
-            </p>
-            <div class="project-tags">
-              <span class="tag">Data Extraction</span>
-              <span class="tag">Full text Screening</span>
-               <span class="tag">Cohere</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/aurumz-rgb/Review_Aid_private" target="_blank" class="btn btn-outline">GitHub</a>
-              <a href="https://reviewaid-legacy.onrender.com" target="_blank" class="btn">Website</a>
-            </div>
-          </div>
-        </div>
-
-
-          <div class="project-card" id="projectCard6">
-          <img src="images/ReviewScreener.png" alt="RA-L" class="project-img" loading="eager">
-          <div class="project-content">
-            <h3 class="project-title">ReviewScreener</h3>
-            <p class="project-description">
-              ReviewScreener -- Screen Papers via title and abstract (automated)
-              [Private, Prototype]
-            </p>
-            <div class="project-tags">
-              <span class="tag">Automation</span>
-              <span class="tag">Screening</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/aurumz-rgb/ReviewScreener" target="_blank" class="btn btn-outline">GitHub</a>
-            </div>
-          </div>
-        </div>
-
-
-
-        
-        
-        <div class="project-card" id="projectCard6">
-          <img src="images/accesspaper.png" alt="AccessPaper" class="project-img" loading="eager">
-          <div class="project-content">
-            <h3 class="project-title">AccessPaper</h3>
-            <p class="project-description">
-              To directly download papers using the DOI of the paper. (Never launched for Production. BETA TOOl.
-              Available for use though, not maintained.)
-            </p>
-            <div class="project-tags">
-              <span class="tag">DOI - search</span>
-              <span class="tag">Paper fetcher</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/aurumz-rgb/AccessPaper" target="_blank" class="btn btn-outline">GitHub</a>
-              <a href="https://accesspaper.vercel.app" target="_blank" class="btn">Website</a>
-            </div>
-          </div>
-        </div>
-
-       
-
-                <div class="project-card" id="projectCard6">
-          <img src="images/R.png" alt="CritiplotR" class="project-img" loading="eager">
-          <div class="project-content">
-            <h3 class="project-title">'critiplotR'</h3>
-            <p class="project-description">
-              Critiplot R package. (Never launched for Production.)
-            </p>
-            <div class="project-tags">
-              <span class="tag">RoB</span>
-              <span class="tag">Risk-of-Bias</span>
-              <span class="tag">Critical Appraisal</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/aurumz-rgb/critiplotR" target="_blank" class="btn btn-outline">GitHub</a>
-              <a href="https://github.com/aurumz-rgb/critiplotR/raw/main/critiplotR-manual.pdf" target="_blank" class="btn">Manual</a>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-
-
-      </div>
-    </div>
-  </section>
-
 
   <section class="contact" id="contact">
     <div class="container">
       <div class="contact-content" id="contactContent">
         <div class="contact-heading">
-  <h2>Get In Touch</h2>
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 48 48">
-    <g fill="none" stroke="#e82156" stroke-width="2.5">
-      <path stroke-linecap="round" stroke-linejoin="round"
-        d="M14.54 20.019q-2.532-3.113-4.754-1.337C7.563 20.458 6.925 26.65 8.713 32.11s5.267 12.893 12.289 12.893S29.684 37.522 32.548 33c2.865-4.522 4.38-8.885 1.573-14.318"/>
-      <path stroke-linecap="round"
-        d="M11 18.037A643 643 0 0 0 7 12c-1.446-2.145 2.251-4.918 4-3.032q1.749 1.887 4.647 5.557"/>
-      <path stroke-linecap="round" stroke-linejoin="round"
-        d="M15.024 25.64q-.727-9.096 1.182-11.845c1.91-2.75 5.457-3.792 8.798-3.792q2.983 0 5.448 2.541"/>
-      <path
-        d="M41 12.613c.586 2.036-.37 3.897-3.316 4.318s-5.153 1.902-6.745 3.148s-4.44 5.026-5.003 6.923s-3.776.153-4.639-.605c-.863-.757-1.712-2.416 0-4.151s1.341-2.081 1.341-3.84c0-1.76 9.362-7.58 14.635-8.112c1.172-.068 3.142.282 3.727 2.319Z"
-        clip-rule="evenodd"/>
-      <path stroke-linecap="round"
-        d="M23.008 4v5.263m-2.701 1.455q-4.527-5.69-7.3-6.35m3.997 2.661l.99-4.067m17.619 7.756q-.483 1.656 0 3.106q.484 1.45 2.071 3.107"/>
-    </g>
-  </svg>
-</div>
-        <p style="font-size: 1.4rem;">Here are my Socials, feel free to reach out to me for collaborations, research
-          opportunities, or just to say hello!</p>
+          <h2>Get In Touch</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 48 48">
+            <g fill="none" stroke="#e82156" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M14.54 20.019q-2.532-3.113-4.754-1.337C7.563 20.458 6.925 26.65 8.713 32.11s5.267 12.893 12.289 12.893S29.684 37.522 32.548 33c2.865-4.522 4.38-8.885 1.573-14.318"/>
+              <path stroke-linecap="round"
+                d="M11 18.037A643 643 0 0 0 7 12c-1.446-2.145 2.251-4.918 4-3.032q1.749 1.887 4.647 5.557"/>
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.024 25.64q-.727-9.096 1.182-11.845c1.91-2.75 5.457-3.792 8.798-3.792q2.983 0 5.448 2.541"/>
+              <path
+                d="M41 12.613c.586 2.036-.37 3.897-3.316 4.318s-5.153 1.902-6.745 3.148s-4.44 5.026-5.003 6.923s-3.776.153-4.639-.605c-.863-.757-1.712-2.416 0-4.151s1.341-2.081 1.341-3.84c0-1.76 9.362-7.58 14.635-8.112c1.172-.068 3.142.282 3.727 2.319Z"
+                clip-rule="evenodd"/>
+              <path stroke-linecap="round"
+                d="M23.008 4v5.263m-2.701 1.455q-4.527-5.69-7.3-6.35m3.997 2.661l.99-4.067m17.619 7.756q-.483 1.656 0 3.106q.484 1.45 2.071 3.107"/>
+            </g>
+          </svg>
+        </div>
+        <p style="font-size: 1.4rem;">Here are my Socials, feel free to reach out to me for collaborations, research opportunities, or just to say გამარჯობა! (hello!)</p>
         <div class="contact-links">
           <a href="mailto:pteroisvolitans12@gmail.com" class="contact-link">
             <i class="fas fa-envelope"></i>
@@ -1894,15 +632,8 @@
       </div>
     </div>
 
-      <div class="end-message">Woohoo! You've reached the end!</div>
-
-    </div> 
+    <div class="end-message">Woohoo! You've reached the end!</div>
   </section>
-  </section>
-
-
-
-
 
   <footer>
     <div class="footer-content">
@@ -1910,191 +641,159 @@
         <span>Made with 🧡 while sipping ☕</span>
       </div>
       <div class="footer-right">
-        <span>© Vihaan Sahu 2025 – Apache 2.0 License</span>
-        <span>Last Updated: 8:15PM. July 3, 2026</span>
+        <a href="https://github.com/aurumz-rgb/aurumz-rgb.github.io" target="_blank" class="footer-license">© aurumz-rgb 2026 – Apache 2.0 License</a>
       </div>
     </div>
   </footer>
 
-  <script>
+  <script src="script.js"></script>
 
-    function startAnimations() {
-      const heroImages = document.getElementById('heroImages');
-      const heroButtons = document.getElementById('heroButtons');
-      const carContainer = document.getElementById('carContainer');
 
-      heroImages.style.animation = 'fadeInUp 1s ease forwards';
-      heroButtons.style.animation = 'fadeInUp 1s ease 0.3s forwards';
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Vihaan Sahu",
+        "alternateName": "Aurumz",
+        "url": "https://aurumz-rgb.github.io/",
+        "image": "https://aurumz-rgb.github.io/assets/web-banner.png",
+        "jobTitle": "Medical Student, Researcher & Developer",
 
-      const isMobile = window.innerWidth <= 992;
-      const carAnimationDuration = isMobile ? '3s' : '5s';
-
-      carContainer.style.animation = `fadeInUp 1s ease 0s forwards, carRace ${carAnimationDuration} linear 0.5s forwards`;
-
-      const carGif = document.querySelector('.car-gif');
-      carGif.style.animation = 'vibrate 0.2s linear infinite';
-
-      const aboutContent = document.getElementById('aboutContent');
-      aboutContent.style.animation = 'fadeInUp 1s ease 0.5s forwards';
-
-      const sectionHeader = document.getElementById('sectionHeader');
-      sectionHeader.style.animation = 'fadeInUp 1s ease 0.7s forwards';
-
-      
-      const prototypesHeader = document.getElementById('prototypesHeader');
-      if (prototypesHeader) {
-          prototypesHeader.style.animation = 'fadeInUp 1s ease 1.1s forwards';
-      }
-
-      const cards = document.querySelectorAll('.project-card');
-      cards.forEach((card, index) => {
-        const delay = 0.9 + (index * 0.2);
-        card.style.animation = `fadeInUp 1s ease ${delay}s forwards`;
-      });
-
-      const contactContent = document.getElementById('contactContent');
-      contactContent.style.animation = 'fadeInUp 1s ease 1.7s forwards';
-
-      setTimeout(function () {
-        const plane = document.getElementById('planeGif');
-        if (plane) {
-          plane.style.opacity = '1';
-          plane.style.animation = 'flyPlane 8s ease-in-out forwards';
-
-          setTimeout(function () {
-            plane.style.display = 'none';
-          }, 8000);
+        "knowsAbout": [
+          "Medical Research",
+          "Evidence Synthesis",
+          "Systematic Reviews",
+          "Meta-Analysis",
+          "Python",
+          "R",
+          "Web Development",
+          "AI in Healthcare"
+        ],
+        "sameAs": [
+          "https://github.com/aurumz-rgb",
+          "https://linkedin.com/in/vihaan-sahu",
+          "https://orcid.org/0009-0008-5790-1818",
+          "https://www.researchgate.net/profile/Vihaan-Sahu",
+          "https://scholar.google.com/citations?user=vBCLHn8AAAAJ&hl=en",
+          "https://osf.io/7w5hz/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://aurumz-rgb.github.io/",
+        "name": "Aurumz Web",
+        "description": "Portfolio of Vihaan Sahu (Aurumz) featuring open-source academic research tools and projects.",
+        "author": {
+          "@id": "https://aurumz-rgb.github.io/#person"
         }
-      }, 100);
-
-      setupCarAnimationLoop();
-    }
-
-    function setupCarAnimationLoop() {
-      const carContainer = document.getElementById('carContainer');
-
-      function restartCarAnimation() {
-        const isMobile = window.innerWidth <= 992;
-        const carAnimationDuration = isMobile ? '3s' : '5s';
-        const delayTime = 100;
-
-        carContainer.style.animation = 'none';
-        carContainer.style.left = '-150px';
-
-        void carContainer.offsetWidth;
-
-        carContainer.style.animation = `fadeInUp 1s ease forwards, carRace ${carAnimationDuration} linear 0.1s forwards`;
-
-        setTimeout(restartCarAnimation, (parseFloat(carAnimationDuration) * 1000) + delayTime);
-      }
-
-      const isMobile = window.innerWidth <= 992;
-      const initialWait = isMobile ? 4000 : 6000;
-      setTimeout(restartCarAnimation, initialWait);
-    }
-
-    window.addEventListener('load', function () {
-      const images = document.querySelectorAll('img');
-      let loadedImages = 0;
-      let hasLoaded = false;
-
-      function finishLoading() {
-        if (hasLoaded) return;
-        hasLoaded = true;
-        
-        const loader = document.getElementById('loader');
-        loader.style.opacity = '0';
-        setTimeout(function () {
-          loader.style.display = 'none';
-          setTimeout(startAnimations, 100);
-        }, 500);
-      }
-
-      const safetyTimeout = setTimeout(finishLoading, 4000);
-
-      function checkAllImagesLoaded() {
-        loadedImages++;
-        if (loadedImages === images.length) {
-          clearTimeout(safetyTimeout); 
-          finishLoading();
-        }
-      }
-
-      if (images.length === 0) {
-        clearTimeout(safetyTimeout);
-        finishLoading();
-      } else {
-        images.forEach(img => {
-          if (img.complete) {
-            checkAllImagesLoaded();
-          } else {
-            img.addEventListener('load', checkAllImagesLoaded);
-            img.addEventListener('error', checkAllImagesLoaded);
+      },
+      {
+        "@type": "ImageGallery",
+        "name": "Aurumz Portfolio Project Images",
+        "url": "https://aurumz-rgb.github.io/index.html",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/assets/banner1.png",
+            "name": "Vihaan Sahu (Aurumz) Personal Banner",
+            "description": "Hello I am Vihaan aka aurumz personal website banner."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/assets/logo-official.png",
+            "name": "Aurumz Official Logo",
+            "description": "Official logo of Aurumz."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/reviewaid.png",
+            "name": "ReviewAid AI Screening Tool Screenshot",
+            "description": "Screenshot of ReviewAid, an AI-powered tool for screening research articles."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/critiplot.png",
+            "name": "Critiplot Visualization Tool Screenshot",
+            "description": "Screenshot of Critiplot, a visualization tool for systematic reviews."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/evidencesynthesis-tools.png",
+            "name": "Evidence Synthesis Tools Directory Screenshot",
+            "description": "Screenshot of the Evidence Synthesis Tools directory website."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/NOS-TLPlot.png",
+            "name": "NOS-TLPlot Visualizer Screenshot",
+            "description": "Screenshot of NOS-TLPlot traffic-light plot visualizer."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/critiplot-package.png",
+            "name": "Critiplot Python Package Screenshot",
+            "description": "Screenshot of the Critiplot Python package usage."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/awesome.png",
+            "name": "Awesome Evidence Synthesis List Screenshot",
+            "description": "Screenshot of the Awesome Evidence Synthesis GitHub list."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/rct-reviewer.png",
+            "name": "RCT-Reviewer Machine Learning Tool Screenshot",
+            "description": "Screenshot of RCT-Reviewer tool for risk-of-bias assessment."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/snowih.png",
+            "name": "Snowih AI Snowballing Tool Screenshot",
+            "description": "Screenshot of Snowih, an AI tool for backward snowballing."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/ReviewAid-legacy.png",
+            "name": "ReviewAid Cohere Prototype Screenshot",
+            "description": "Screenshot of the legacy Cohere implementation of ReviewAid."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/accesspaper.png",
+            "name": "AccessPaper DOI Fetcher Screenshot",
+            "description": "Screenshot of AccessPaper prototype fetching papers via DOI."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/R.png",
+            "name": "critiplotR R Package Screenshot",
+            "description": "Screenshot of the critiplotR R package for risk-of-bias visualizations."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/rikai.png",
+            "name": "RikaiCode Codebase Analyzer Screenshot",
+            "description": "Screenshot of RikaiCode developer utility for analyzing GitHub repositories."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/pickle-to-joblib.png",
+            "name": "Pickle to Joblib Converter Screenshot",
+            "description": "Screenshot of the pickle-to-joblib Streamlit utility."
+          },
+          {
+            "@type": "ImageObject",
+            "url": "https://aurumz-rgb.github.io/images/asphalt.png",
+            "name": "Asphalt 6 Adrenaline PlayCover macOS Screenshot",
+            "description": "Screenshot of Asphalt 6 Adrenaline running on macOS via PlayCover."
           }
-        });
+        ]
       }
-    });
-
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
-
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          const headerOffset = 80;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
-          window.scrollTo({
-              top: offsetPosition,
-              behavior: "smooth"
-          });
-        }
-      });
-    });
-
-    window.addEventListener('scroll', function () {
-      const header = document.querySelector('header');
-      if (window.scrollY > 100) {
-        header.style.backgroundColor = 'rgba(10, 10, 15, 0.95)';
-      } else {
-        header.style.backgroundColor = 'rgba(10, 10, 15, 0.85)';
-      }
-    });
-
-    const scrollToTopBox = document.getElementById('scrollToTopBox');
-
-    window.addEventListener('scroll', function () {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      if (windowHeight + scrollTop >= documentHeight - 5) {
-        scrollToTopBox.classList.add('show');
-      } else {
-        scrollToTopBox.classList.remove('show');
-      }
-    });
-
-    scrollToTopBox.addEventListener('click', function () {
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    ]
+  }
   </script>
 </body>
-
 </html>
