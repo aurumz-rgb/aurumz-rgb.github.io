@@ -775,7 +775,7 @@ footer {
   backdrop-filter: blur(10px);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
   transition: var(--transition);
 }
 
