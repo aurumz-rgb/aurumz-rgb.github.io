@@ -347,3 +347,59 @@ if (lightboxOverlay) {
     }
   }, { passive: false });
 }
+
+function toggleBionic(id, btn) {
+  const fullText = document.getElementById(id);
+  if (!fullText) return;
+
+  if (!fullText.dataset.originalHtml) {
+    fullText.dataset.originalHtml = fullText.innerHTML;
+  }
+
+  if (fullText.classList.contains('bionic-active')) {
+
+    fullText.innerHTML = fullText.dataset.originalHtml;
+    fullText.classList.remove('bionic-active');
+    btn.innerText = 'Bionic Mode';
+  } else {
+
+    let html = fullText.dataset.originalHtml;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    
+    function processNode(node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const text = node.textContent;
+        const words = text.split(/(\s+)/);
+        const fragment = document.createDocumentFragment();
+        
+        words.forEach(word => {
+          if (word.trim() === '' || word.length < 2) {
+            fragment.appendChild(document.createTextNode(word));
+          } else {
+            const match = word.match(/^([a-zA-Z0-9']+)([\s\S]*)$/);
+            if (match) {
+              const w = match[1];
+              const rest = match[2];
+              const half = Math.ceil(w.length / 2);
+              const strong = document.createElement('strong');
+              strong.textContent = w.substring(0, half);
+              fragment.appendChild(strong);
+              fragment.appendChild(document.createTextNode(w.substring(half) + rest));
+            } else {
+              fragment.appendChild(document.createTextNode(word));
+            }
+          }
+        });
+        node.parentNode.replaceChild(fragment, node);
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        Array.from(node.childNodes).forEach(processNode);
+      }
+    }
+    
+    Array.from(doc.body.childNodes).forEach(processNode);
+    fullText.innerHTML = doc.body.innerHTML;
+    fullText.classList.add('bionic-active');
+    btn.innerText = 'Normal Mode';
+  }
+}

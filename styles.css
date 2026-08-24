@@ -1519,3 +1519,18 @@ footer {
     font-size: 0.95rem;
   }
 }
+
+
+.bionic-active p.project-description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 576px) {
+  .blog-content .btn-outline {
+    margin-bottom: 0.5rem;
+  }
+  .blog-content .btn-outline[onclick*="toggleBionic"] {
+    margin-left: 0 !important;
+  }
+}
