@@ -167,6 +167,16 @@ window.addEventListener('scroll', function () {
       header.style.backgroundColor = 'rgba(10, 10, 15, 0.85)';
     }
   }
+
+  const logo = document.querySelector('.logo');
+  if (logo) {
+    
+    if (window.scrollY > window.innerHeight * 0.8) {
+      logo.classList.add('show-logo');
+    } else {
+      logo.classList.remove('show-logo');
+    }
+  }
 });
 
 const scrollToTopBox = document.getElementById('scrollToTopBox');

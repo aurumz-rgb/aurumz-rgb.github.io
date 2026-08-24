@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
   --bg-primary: #0a0a0f;
   --bg-secondary: #14141a;
@@ -165,7 +167,7 @@ a:hover {
 }
 
 .btn:hover {
-  background-color: #a3632b;
+  background-color: #5f4b39;
   transform: none;
   box-shadow: none;
 }
@@ -177,7 +179,7 @@ a:hover {
 }
 
 .btn-outline:hover {
-  background-color: #cc7a36;
+  background-color: #FF9B45;
   color: var(--bg-primary);
   transform: none;
   box-shadow: none;
@@ -208,7 +210,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: var(--spacing-md) 0;
+  padding: 1.2rem 0;
   background-color: rgba(10, 10, 15, 0.85);
   backdrop-filter: blur(10px);
   z-index: 1000;
@@ -229,6 +231,14 @@ nav {
   display: flex;
   align-items: center;
   font-family: var(--font-heading);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+.logo.show-logo {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .logo i {
@@ -342,6 +352,30 @@ nav {
   transform: translateY(30px);
 }
 
+.hero-buttons .btn {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-shadow: 4px 4px 0px #000;
+  padding: 1rem 1.5rem;
+  letter-spacing: 0;
+}
+
+.hero-buttons .btn:hover {
+  box-shadow: 2px 2px 0px #000;
+  transform: translate(2px, 2px);
+}
+
+.hero-buttons .btn-outline {
+  border: 2px solid var(--accent);
+  box-shadow: 4px 4px 0px #000;
+}
+
+.hero-buttons .btn-outline:hover {
+  box-shadow: 2px 2px 0px #000;
+}
+
 .car-container {
   position: absolute;
   bottom: -67px;
@@ -402,9 +436,12 @@ nav {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
     transform: translateY(-40px) rotate(180deg);
   }
@@ -516,12 +553,15 @@ nav {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 0.8rem;
   }
+
   .tech-item {
     padding: 1rem 0.5rem;
   }
+
   .tech-icon {
     font-size: 2rem;
   }
+
   .tech-name {
     font-size: 0.9rem;
   }
@@ -739,8 +779,8 @@ footer {
 }
 
 .end-message {
-  color: #888888; 
-  text-align: center; 
+  color: #888888;
+  text-align: center;
   font-size: 0.9rem;
   margin-top: 5rem;
   opacity: 0.7;
@@ -825,6 +865,7 @@ footer {
   0% {
     left: -150px;
   }
+
   100% {
     left: 110%;
   }
@@ -834,15 +875,19 @@ footer {
   0% {
     transform: translateY(0) rotate(0deg);
   }
+
   25% {
     transform: translateY(-1.5px) rotate(-0.75deg);
   }
+
   50% {
     transform: translateY(1.5px) rotate(0.75deg);
   }
+
   75% {
     transform: translateY(-1.5px) rotate(-0.75deg);
   }
+
   100% {
     transform: translateY(0) rotate(0deg);
   }
@@ -854,26 +899,32 @@ footer {
     top: 15%;
     transform: rotate(0deg);
   }
+
   15% {
     top: 13%;
     transform: rotate(9deg);
   }
+
   25% {
     top: 20%;
     transform: rotate(15deg);
   }
+
   35% {
     top: 15%;
     transform: rotate(-10deg);
   }
+
   50% {
     top: 30%;
     transform: rotate(-10deg);
   }
+
   75% {
     top: 50%;
     transform: rotate(5deg);
   }
+
   100% {
     left: 110%;
     top: 60%;
@@ -885,6 +936,7 @@ footer {
   .container {
     max-width: 1400px;
   }
+
   .projects-grid {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   }
@@ -900,63 +952,77 @@ footer {
   .projects-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
+
   .hero-images-container {
     flex-direction: column-reverse;
     gap: var(--spacing-md);
     align-items: center;
   }
+
   .hero-image-left {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
     transform: none;
   }
+
   .hero-logo-right {
     display: none;
   }
+
   .car-container {
     bottom: calc(-67px * 1.1);
     width: clamp(120px, 20vw, 200px);
   }
+
   .plane-gif {
     top: 25%;
     left: -550px;
     width: clamp(400px, 70vw, 650px);
   }
+
   @keyframes carRace {
     0% {
       left: -150px;
     }
+
     100% {
       left: 100%;
     }
   }
+
   @keyframes flyPlane {
     0% {
       left: -550px;
       top: 15%;
       transform: rotate(0deg);
     }
+
     15% {
       top: 13%;
       transform: rotate(9deg);
     }
+
     25% {
       top: 20%;
       transform: rotate(15deg);
     }
+
     35% {
       top: 15%;
       transform: rotate(-10deg);
     }
+
     50% {
       top: 30%;
       transform: rotate(-10deg);
     }
+
     75% {
       top: 50%;
       transform: rotate(5deg);
     }
+
     100% {
       left: 100%;
       top: 60%;
@@ -978,33 +1044,41 @@ footer {
     gap: var(--spacing-md);
     border-top: 1px solid var(--border-color);
   }
+
   .nav-links.active {
     display: flex;
   }
+
   .mobile-menu-btn {
     display: block;
   }
+
   .hero-buttons {
     flex-direction: column;
     align-items: center;
     width: 100%;
   }
+
   .hero-buttons .btn {
     width: 200px;
   }
+
   .contact-links {
     flex-direction: column;
     align-items: center;
     margin-bottom: var(--spacing-xl);
   }
+
   .contact-link {
     width: 100%;
     max-width: 300px;
   }
+
   .footer-content {
     flex-direction: column;
     text-align: center;
   }
+
   .footer-left,
   .footer-right {
     justify-content: center;
@@ -1016,64 +1090,82 @@ footer {
   .container {
     padding: 0 var(--spacing-sm);
   }
+
   h1 {
     font-size: 2rem;
   }
+
   h2 {
     font-size: 1.8rem;
   }
+
   h3 {
     font-size: 1.4rem;
   }
+
   header {
     padding: 0.8rem 0;
   }
+
   .hero-images-container {
     flex-direction: column-reverse;
     align-items: center;
     gap: 2rem;
   }
+
   .hero-image-left {
     width: 180%;
     max-width: 700px;
     margin: 0 auto;
     transform: translateX(1%);
   }
+
   .hero-logo-right {
     display: none;
   }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
+
   .project-card {
     max-width: 100%;
   }
+
   .project-img {
     height: 200px;
     object-fit: cover;
   }
+
   .btn {
     padding: 0.7rem 1.5rem;
     font-size: 0.85rem;
   }
+
   .contact-link {
     padding: 0.8rem 1.2rem;
   }
+
   .contact-link i {
     font-size: 1.5rem;
   }
+
   .contact-link span {
     font-size: 0.9rem;
   }
+
   .about-text p {
     font-size: 1.1rem;
   }
+
   .about {
     padding: var(--spacing-xl) 0;
   }
+
   .footer-content {
     padding: 0 var(--spacing-md);
   }
+
   .scroll-to-top-box {
     left: 0;
     right: 0;
@@ -1086,50 +1178,61 @@ footer {
     left: 50%;
     transform: translateX(-50%);
   }
+
   .car-container {
     width: 140px;
     bottom: calc(-67px * 0.91);
     left: -150px;
   }
+
   .plane-gif {
     top: 20%;
     left: -450px;
     width: clamp(350px, 75vw, 600px);
   }
+
   @keyframes carRace {
     0% {
       left: -150px;
     }
+
     100% {
       left: 100%;
     }
   }
+
   @keyframes flyPlane {
     0% {
       left: -450px;
       top: 20%;
       transform: rotate(0deg);
     }
+
     15% {
       top: 18%;
       transform: rotate(9deg);
     }
+
     25% {
       top: 25%;
       transform: rotate(15deg);
     }
+
     35% {
       top: 18%;
       transform: rotate(-10deg);
     }
+
     50% {
       top: 35%;
       transform: rotate(-10deg);
     }
+
     75% {
       top: 55%;
       transform: rotate(5deg);
     }
+
     100% {
       left: 100%;
       top: 65%;
@@ -1142,94 +1245,117 @@ footer {
   .container {
     padding: 0 0.5rem;
   }
+
   .hero-images-container {
     flex-direction: column-reverse;
     align-items: center;
     gap: 1.5rem;
   }
+
   .hero-image-left {
     width: 200%;
     max-width: 500px;
     margin: 0 auto;
     transform: translateX(1%);
   }
+
   .hero-logo-right {
     display: none;
   }
+
   .project-card {
     margin: 0 auto;
   }
+
   .project-content {
     padding: 1rem;
   }
+
   .project-links {
     flex-direction: column;
   }
+
   .project-links .btn {
     width: 100%;
   }
+
   .contact-link {
     padding: 0.7rem 1rem;
   }
+
   .footer-content {
     font-size: 0.8rem;
   }
+
   .project-img {
     height: 180px;
   }
+
   .car-container {
     width: 120px;
     bottom: calc(-67px * 0.86);
     left: -120px;
   }
+
   @keyframes carRace {
     0% {
       left: -120px;
     }
+
     100% {
       left: 100%;
     }
   }
+
   .plane-gif {
     top: 15%;
     left: -350px;
     width: clamp(300px, 80vw, 550px);
   }
+
   .contact-heading {
     display: flex;
     align-items: center;
-    justify-content: center; 
-    gap: 20px; 
+    justify-content: center;
+    gap: 20px;
   }
+
   .contact-heading h2 {
     margin: 0;
   }
+
   @keyframes flyPlane {
     0% {
       left: -350px;
       top: 25%;
       transform: rotate(0deg);
     }
+
     15% {
       top: 23%;
       transform: rotate(9deg);
     }
+
     25% {
       top: 30%;
       transform: rotate(15deg);
     }
+
     35% {
       top: 23%;
       transform: rotate(-10deg);
     }
+
     50% {
       top: 40%;
       transform: rotate(-10deg);
     }
+
     75% {
       top: 60%;
       transform: rotate(5deg);
     }
+
     100% {
       left: 100%;
       top: 70%;
@@ -1268,10 +1394,10 @@ footer {
   width: 82%;
   height: auto;
   display: block;
-  object-fit: contain; 
+  object-fit: contain;
   margin: 0;
   padding: 0;
-  background-color: var(--bg-primary); 
+  background-color: var(--bg-primary);
 }
 
 .graffiti-info {
