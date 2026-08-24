@@ -210,3 +210,140 @@ function toggleBlog(id, btn) {
     }
   }
 }
+
+
+const lightboxOverlay = document.getElementById('lightboxOverlay');
+const lightboxImg = document.getElementById('lightboxImg');
+const zoomInBtn = document.getElementById('zoomInBtn');
+const zoomOutBtn = document.getElementById('zoomOutBtn');
+const lightboxBack = document.getElementById('lightboxBack');
+const lightboxClose = document.getElementById('lightboxClose');
+
+let currentZoom = 1;
+let translateX = 0;
+let translateY = 0;
+let isDragging = false;
+let startX = 0, startY = 0;
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt;
+  currentZoom = 1;
+  translateX = 0;
+  translateY = 0;
+  updateTransform();
+  lightboxOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  lightboxOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function updateTransform() {
+  lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentZoom})`;
+}
+
+function zoomIn() {
+  currentZoom = Math.min(currentZoom + 0.25, 4);
+  updateTransform();
+}
+
+function zoomOut() {
+  currentZoom = Math.max(currentZoom - 0.25, 1);
+  if (currentZoom === 1) {
+    translateX = 0;
+    translateY = 0;
+    updateTransform();
+  } else {
+    updateTransform();
+  }
+}
+
+
+document.querySelectorAll('.graffiti-img').forEach(img => {
+  img.addEventListener('click', () => {
+    openLightbox(img.src, img.alt);
+  });
+});
+
+if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+if (lightboxBack) lightboxBack.addEventListener('click', closeLightbox);
+if (zoomInBtn) zoomInBtn.addEventListener('click', zoomIn);
+if (zoomOutBtn) zoomOutBtn.addEventListener('click', zoomOut);
+
+
+if (lightboxOverlay) {
+  lightboxOverlay.addEventListener('click', (e) => {
+    if (e.target === lightboxOverlay) closeLightbox();
+  });
+}
+
+
+document.addEventListener('keydown', (e) => {
+  if (!lightboxOverlay || !lightboxOverlay.classList.contains('active')) return;
+  if (e.key === 'Escape' || e.key === 'Backspace') closeLightbox();
+  if (e.key === '+' || e.key === '=') zoomIn();
+  if (e.key === '-' || e.key === '_') zoomOut();
+});
+
+
+if (lightboxImg) {
+  lightboxImg.addEventListener('mousedown', (e) => {
+    if (currentZoom > 1) {
+      isDragging = true;
+      startX = e.clientX - translateX;
+      startY = e.clientY - translateY;
+      lightboxImg.classList.add('dragging');
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      updateTransform();
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      lightboxImg.classList.remove('dragging');
+    }
+  });
+
+
+  lightboxImg.addEventListener('touchstart', (e) => {
+    if (currentZoom > 1 && e.touches.length === 1) {
+      isDragging = true;
+      startX = e.touches[0].clientX - translateX;
+      startY = e.touches[0].clientY - translateY;
+    }
+  }, { passive: true });
+
+  lightboxImg.addEventListener('touchmove', (e) => {
+    if (isDragging && e.touches.length === 1) {
+      e.preventDefault();
+      translateX = e.touches[0].clientX - startX;
+      translateY = e.touches[0].clientY - startY;
+      updateTransform();
+    }
+  }, { passive: false });
+
+  lightboxImg.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+}
+
+if (lightboxOverlay) {
+  lightboxOverlay.addEventListener('wheel', (e) => {
+    if (lightboxOverlay.classList.contains('active')) {
+      e.preventDefault();
+      if (e.deltaY < 0) zoomIn();
+      else zoomOut();
+    }
+  }, { passive: false });
+}
