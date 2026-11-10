@@ -1426,7 +1426,10 @@ footer {
 .footer-license {
   color: rgba(255, 255, 255, 0.96);
   text-decoration: none;
-
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+  line-height: 1.6;
 }
 
 .footer-license:hover {
