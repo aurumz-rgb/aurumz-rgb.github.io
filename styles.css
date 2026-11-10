@@ -360,9 +360,9 @@ nav {
 
 .car-container {
   position: absolute;
-  bottom: -85px;
-  left: -190px;
-  width: clamp(100px, 17vw, 190px);
+  bottom: -71px;
+  left: -160px;
+  width: clamp(85px, 16vw, 160px);
   height: auto;
   z-index: 10;
   opacity: 0;
@@ -376,8 +376,8 @@ nav {
 .plane-gif {
   position: absolute;
   top: 35%;
-  left: -900px;
-  width: clamp(400px, 70vw, 800px);
+  left: -720px;
+  width: clamp(320px, 60vw, 620px);
   height: auto;
   z-index: 10;
   opacity: 0;
@@ -854,7 +854,7 @@ footer {
 
 @keyframes carRace {
   0% {
-    left: -190px;
+    left: -160px;
   }
 
   100% {
@@ -886,7 +886,7 @@ footer {
 
 @keyframes flyPlane {
   0% {
-    left: -900px;
+    left: -720px;
     top: 15%;
     transform: rotate(0deg);
   }
@@ -1359,62 +1359,68 @@ footer {
 
 
 .graffiti-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  gap: 0;
+  columns: 320px;
+  column-gap: var(--spacing-md);
   margin-top: var(--spacing-xl);
 }
 
 .graffiti-card {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
   overflow: hidden;
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-  transition: none;
+  margin: 0 0 var(--spacing-md);
+  break-inside: avoid;
+  -webkit-break-inside: avoid;
+  transition: var(--transition);
 }
 
 .graffiti-card:hover {
-  transform: none;
-  box-shadow: none;
+  border-color: var(--accent);
 }
 
 .graffiti-img {
-  width: 82%;
+  width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
-  margin: 0;
-  padding: 0;
   background-color: var(--bg-primary);
+  cursor: zoom-in;
+  transition: filter 0.3s ease;
+}
+
+.graffiti-card:hover .graffiti-img {
+  filter: brightness(1.1);
 }
 
 .graffiti-info {
-  padding: 1.2rem 1.5rem;
-  margin: 0;
-
-
+  padding: 1rem 1.2rem 1.1rem;
 }
 
 .graffiti-location {
-  color: var(--text-secondary);
-  font-size: 1rem;
+  color: var(--accent);
+  font-size: 0.85rem;
   margin: 0;
-  font-weight: 400;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
 }
 
-@media (max-width: 992px) {
-  .graffiti-grid {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  }
+.graffiti-location i {
+  margin-right: 0.45rem;
+  font-size: 0.75rem;
+}
+
+.graffiti-note {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0.4rem 0 0;
+  font-weight: 300;
+  font-style: italic;
 }
 
 @media (max-width: 576px) {
   .graffiti-grid {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 }
 
@@ -1497,8 +1503,9 @@ footer {
   transition: none;
 }
 
-.graffiti-img {
-  cursor: zoom-in;
+.lightbox-img.dragging {
+  cursor: grabbing;
+  transition: none;
 }
 
 @media (max-width: 576px) {
