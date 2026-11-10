@@ -255,10 +255,12 @@ nav {
 
 .nav-links a {
   color: var(--text-primary);
+  font-family: 'Press Start 2P', cursive;
   font-weight: 400;
   position: relative;
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  letter-spacing: 1px;
+  font-size: 0.7rem;
+  letter-spacing: 0;
+  line-height: 1.6;
 }
 
 .nav-links a::after {
