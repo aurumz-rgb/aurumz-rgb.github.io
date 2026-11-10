@@ -40,16 +40,29 @@ function startAnimations() {
   const contactContent = document.getElementById('contactContent');
   if(contactContent) contactContent.style.animation = 'fadeInUp 1s ease 1.7s forwards';
 
-  setTimeout(function () {
-    const plane = document.getElementById('planeGif');
-    if (plane) {
-      plane.style.opacity = '1';
-      plane.style.animation = 'flyPlane 8s ease-in-out forwards';
-      setTimeout(function () {
-        plane.style.display = 'none';
-      }, 8000);
-    }
-  }, 0); // this number decides when the plane animation starts
+  setTimeout(setupPlaneAnimationLoop, 0); // this number decides when the plane animation starts
+}
+
+function setupPlaneAnimationLoop() {
+  const plane = document.getElementById('planeGif');
+  if(!plane) return;
+
+  function restartPlaneAnimation() {
+    plane.style.display = '';
+    plane.style.opacity = '1';
+    plane.style.animation = 'none';
+
+    void plane.offsetWidth;
+
+    plane.style.animation = 'flyPlane 8s ease-in-out forwards';
+
+    setTimeout(function () {
+      plane.style.display = 'none';
+      setTimeout(restartPlaneAnimation, 10000);
+    }, 8000);
+  }
+
+  restartPlaneAnimation();
 }
 
 function setupCarAnimationLoop() {
