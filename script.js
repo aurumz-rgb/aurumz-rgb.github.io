@@ -58,7 +58,7 @@ function setupPlaneAnimationLoop() {
 
     setTimeout(function () {
       plane.style.display = 'none';
-      setTimeout(restartPlaneAnimation, 10000);
+      setTimeout(restartPlaneAnimation, 8000);
     }, 8000);
   }
 
