@@ -1372,11 +1372,6 @@ footer {
   margin: 0 0 var(--spacing-md);
   break-inside: avoid;
   -webkit-break-inside: avoid;
-  transition: var(--transition);
-}
-
-.graffiti-card:hover {
-  border-color: var(--accent);
 }
 
 .graffiti-img {
@@ -1385,11 +1380,6 @@ footer {
   display: block;
   background-color: var(--bg-primary);
   cursor: zoom-in;
-  transition: filter 0.3s ease;
-}
-
-.graffiti-card:hover .graffiti-img {
-  filter: brightness(1.1);
 }
 
 .graffiti-info {
@@ -1397,7 +1387,7 @@ footer {
 }
 
 .graffiti-location {
-  color: var(--accent);
+  color: var(--text-primary);
   font-size: 0.85rem;
   margin: 0;
   font-weight: 600;
@@ -1408,6 +1398,7 @@ footer {
 .graffiti-location i {
   margin-right: 0.45rem;
   font-size: 0.75rem;
+  color: var(--accent);
 }
 
 .graffiti-note {
