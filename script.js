@@ -62,7 +62,7 @@ function setupCarAnimationLoop() {
     const delayTime = 100;
 
     carContainer.style.animation = 'none';
-    carContainer.style.left = '-150px';
+    carContainer.style.left = '-190px';
 
     void carContainer.offsetWidth;
 

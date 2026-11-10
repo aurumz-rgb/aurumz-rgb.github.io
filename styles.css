@@ -360,9 +360,9 @@ nav {
 
 .car-container {
   position: absolute;
-  bottom: -67px;
-  left: -150px;
-  width: clamp(80px, 15vw, 150px);
+  bottom: -85px;
+  left: -190px;
+  width: clamp(100px, 17vw, 190px);
   height: auto;
   z-index: 10;
   opacity: 0;
@@ -854,7 +854,7 @@ footer {
 
 @keyframes carRace {
   0% {
-    left: -150px;
+    left: -190px;
   }
 
   100% {
@@ -1108,7 +1108,7 @@ footer {
     width: 180%;
     max-width: 700px;
     margin: 0 auto;
-    transform: translateX(1%);
+    transform: translateX(-4%);
   }
 
   .hero-logo-right {
@@ -1247,7 +1247,7 @@ footer {
     width: 200%;
     max-width: 500px;
     margin: 0 auto;
-    transform: translateX(1%);
+    transform: translateX(-5%);
   }
 
   .hero-logo-right {
