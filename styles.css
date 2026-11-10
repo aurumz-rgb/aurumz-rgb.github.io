@@ -266,11 +266,15 @@ nav {
 .nav-links a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -7px;
   left: 0;
   width: 0;
-  height: 2px;
-  background-color: var(--accent);
+  height: 4px;
+  background-image: repeating-linear-gradient(90deg,
+      var(--accent) 0,
+      var(--accent) 4px,
+      transparent 4px,
+      transparent 8px);
   transition: var(--transition);
 }
 
