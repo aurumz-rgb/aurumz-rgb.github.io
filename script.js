@@ -76,15 +76,15 @@ function setupCarAnimationLoop() {
   setTimeout(restartCarAnimation, initialWait);
 }
 
-window.addEventListener('load', function () {
-  const images = document.querySelectorAll('img');
+(function () {
+  const images = document.querySelectorAll('.hero img, header img');
   let loadedImages = 0;
   let hasLoaded = false;
 
   function finishLoading() {
     if (hasLoaded) return;
     hasLoaded = true;
-    
+
     const loader = document.getElementById('loader');
     if(loader) {
       loader.style.opacity = '0';
@@ -97,12 +97,12 @@ window.addEventListener('load', function () {
     }
   }
 
-  const safetyTimeout = setTimeout(finishLoading, 4000);
+  const safetyTimeout = setTimeout(finishLoading, 3000);
 
   function checkAllImagesLoaded() {
     loadedImages++;
     if (loadedImages === images.length) {
-      clearTimeout(safetyTimeout); 
+      clearTimeout(safetyTimeout);
       finishLoading();
     }
   }
@@ -120,7 +120,7 @@ window.addEventListener('load', function () {
       }
     });
   }
-});
+})();
 
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const navLinks = document.getElementById('navLinks');
