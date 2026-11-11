@@ -1417,7 +1417,32 @@ footer {
 
 @media (max-width: 576px) {
   .graffiti-grid {
-    column-count: 1;
+    column-count: 2;
+    column-width: auto;
+    column-gap: 0.6rem;
+  }
+
+  .graffiti-card {
+    margin-bottom: 0.6rem;
+  }
+
+  .graffiti-info {
+    padding: 0.55rem 0.65rem 0.65rem;
+  }
+
+  .graffiti-location {
+    font-size: 0.68rem;
+    letter-spacing: 0.1px;
+  }
+
+  .graffiti-location i {
+    margin-right: 0.3rem;
+    font-size: 0.6rem;
+  }
+
+  .graffiti-note {
+    font-size: 0.66rem;
+    margin-top: 0.3rem;
   }
 }
 
