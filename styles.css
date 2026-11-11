@@ -1060,17 +1060,6 @@ footer {
     width: 200px;
   }
 
-  .contact-links {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .contact-link {
-    width: 100%;
-    max-width: 300px;
-  }
-
   .footer-content {
     flex-direction: column;
     text-align: center;
@@ -1137,18 +1126,6 @@ footer {
   .btn {
     padding: 0.7rem 1.2rem;
     font-size: 0.65rem;
-  }
-
-  .contact-link {
-    padding: 0.8rem 1.2rem;
-  }
-
-  .contact-link i {
-    font-size: 1.5rem;
-  }
-
-  .contact-link span {
-    font-size: 0.9rem;
   }
 
   .about-text p {
@@ -1274,10 +1251,6 @@ footer {
 
   .project-links .btn {
     width: 100%;
-  }
-
-  .contact-link {
-    padding: 0.7rem 1rem;
   }
 
   .footer-content {
