@@ -21,6 +21,11 @@ function startAnimations() {
   const sectionHeader = document.getElementById('sectionHeader');
   if(sectionHeader) sectionHeader.style.animation = 'fadeInUp 1s ease 0.7s forwards';
 
+  const packagesHeader = document.getElementById('packagesHeader');
+  if (packagesHeader) {
+      packagesHeader.style.animation = 'fadeInUp 1s ease 0.9s forwards';
+  }
+
   const prototypesHeader = document.getElementById('prototypesHeader');
   if (prototypesHeader) {
       prototypesHeader.style.animation = 'fadeInUp 1s ease 1.1s forwards';
