@@ -40,7 +40,10 @@
 <body>
 
   <div class="loader-container" id="loader">
-    <div class="loader"></div>
+    <div class="loader" role="status" aria-label="Loading">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
   </div>
 
   <header>
@@ -374,6 +377,11 @@
     </div>
   </footer>
 
+  <button class="scroll-to-top-box" id="scrollToTopBox" type="button" aria-label="Scroll to top">
+    <svg class="scroll-to-top-icon" viewBox="0 0 5 6" aria-hidden="true">
+      <path d="M2 0h1v1H2z M1 1h3v1H1z M0 2h5v1H0z M2 3h1v3H2z" />
+    </svg>
+  </button>
 
   <div class="lightbox-overlay" id="lightboxOverlay">
     <div class="lightbox-controls">

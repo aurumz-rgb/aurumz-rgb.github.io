@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://aurumz-rgb.github.io/index.html</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <image:image><image:loc>https://aurumz-rgb.github.io/images/reviewaid.webp</image:loc></image:image>
     <image:image><image:loc>https://aurumz-rgb.github.io/images/critiplot.webp</image:loc></image:image>
     <image:image><image:loc>https://aurumz-rgb.github.io/images/evidencesynthesis-tools.webp</image:loc></image:image>
@@ -18,10 +18,24 @@
     <image:image><image:loc>https://aurumz-rgb.github.io/images/pickle-to-joblib.webp</image:loc></image:image>
     <image:image><image:loc>https://aurumz-rgb.github.io/images/asphalt1.webp</image:loc></image:image>
     <image:image><image:loc>https://aurumz-rgb.github.io/images/gain.webp</image:loc></image:image>
+    <image:image><image:loc>https://aurumz-rgb.github.io/images/nos-tlplot-package.webp</image:loc></image:image>
+    <image:image><image:loc>https://aurumz-rgb.github.io/images/critiplot-conda.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://aurumz-rgb.github.io/blog.html</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aurumz-rgb.github.io/weblog-coauthor-exchange.html</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aurumz-rgb.github.io/weblog-coauthorship-sales.html</loc>
+    <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aurumz-rgb.github.io/weblog-surgeon.html</loc>
+    <lastmod>2026-11-21</lastmod>
   </url>
   <url>
     <loc>https://aurumz-rgb.github.io/camera.html</loc>

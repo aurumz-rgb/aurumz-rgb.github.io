@@ -54,7 +54,10 @@
 <body>
 
   <div class="loader-container" id="loader">
-    <div class="loader"></div>
+    <div class="loader" role="status" aria-label="Loading">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
   </div>
 
   <header>
@@ -432,9 +435,76 @@
     <div class="container">
       <div class="section-header" id="packagesHeader">
         <h2>Packages</h2>
-        <p style="font-size: 1.2rem;">Python and R packages built out of my research tools.</p>
+        <p style="font-size: 1.2rem;">Python, R, and conda-forge packages built out of my research tools.</p>
       </div>
       <div class="projects-grid">
+        <div class="project-card" id="projectCard_nos_tlplot">
+          <img src="images/nos-tlplot-package.webp" alt="nos-tlplot Python Package" class="project-img"
+            loading="eager" style="object-position: left center;">
+          <div class="project-content">
+            <h3 class="project-title">nos-tlplot</h3>
+            <p class="project-description">
+              The Python package for NOS-TLPlot, generating thirteen publication-ready traffic-light and risk-of-bias
+              plots for Newcastle–Ottawa Scale assessments.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">PyPI</span>
+              <span class="tag">NOS</span>
+              <span class="tag">Visualization</span>
+              <span class="tag">Risk-of-Bias</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/nos-tlplot/NOS-TLPlot-Package" target="_blank"
+                class="btn btn-outline">GitHub</a>
+              <a href="https://pypi.org/project/nos-tlplot/" target="_blank" class="btn">PyPI</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="projectCard_nos_tlplotR">
+          <img src="images/R.webp" alt="nos.tlplotR R Package" class="project-img" loading="eager">
+          <div class="project-content">
+            <h3 class="project-title">nos.tlplotR</h3>
+            <p class="project-description">
+              The official R interface to nos-tlplot, producing the same publication-ready NOS traffic-light and
+              risk-of-bias plots directly in R.
+            </p>
+            <div class="project-tags">
+              <span class="tag">R Package</span>
+              <span class="tag">NOS</span>
+              <span class="tag">Visualization</span>
+              <span class="tag">Risk-of-Bias</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/nos-tlplot/nos.tlplotR" target="_blank" class="btn btn-outline">GitHub</a>
+              <a href="https://nos-tlplot.github.io/nos.tlplotR/" target="_blank" class="btn">Website</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="projectCard_critiplot_conda">
+          <img src="images/critiplot-conda.webp" alt="Critiplot conda-forge package" class="project-img"
+            loading="eager" style="object-position: left center;">
+          <div class="project-content">
+            <h3 class="project-title">Critiplot (conda-forge)</h3>
+            <p class="project-description">
+              Install Critiplot from conda-forge for a one-command setup with all the plotting dependencies handled.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Conda</span>
+              <span class="tag">conda-forge</span>
+              <span class="tag">Python</span>
+              <span class="tag">Risk-of-Bias</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/aurumz-rgb/critiplot-package" target="_blank"
+                class="btn btn-outline">GitHub</a>
+              <a href="https://anaconda.org/conda-forge/critiplot" target="_blank" class="btn">conda-forge</a>
+            </div>
+          </div>
+        </div>
+
         <div class="project-card" id="projectCard5">
           <img src="images/critiplot-package.webp" alt="Critiplot Python Package" class="project-img" loading="eager">
           <div class="project-content">
@@ -723,9 +793,11 @@
           </a>
         </div>
 
-        <div class="scroll-to-top-box" id="scrollToTopBox">
-          <i class="fas fa-arrow-up"></i>
-        </div>
+        <button class="scroll-to-top-box" id="scrollToTopBox" type="button" aria-label="Scroll to top">
+    <svg class="scroll-to-top-icon" viewBox="0 0 5 6" aria-hidden="true">
+      <path d="M2 0h1v1H2z M1 1h3v1H1z M0 2h5v1H0z M2 3h1v3H2z" />
+    </svg>
+  </button>
       </div>
     </div>
 

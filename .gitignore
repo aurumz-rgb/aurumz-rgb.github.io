@@ -4,3 +4,6 @@
 # editor setting folders
 .idea/
 .vscode/
+
+# local project cache
+.serena/

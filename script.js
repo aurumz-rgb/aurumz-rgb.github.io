@@ -1,10 +1,5 @@
 function startAnimations() {
-  const heroImages = document.getElementById('heroImages');
-  const heroButtons = document.getElementById('heroButtons');
   const carContainer = document.getElementById('carContainer');
-
-  if(heroImages) heroImages.style.animation = 'fadeInUp 1s ease forwards';
-  if(heroButtons) heroButtons.style.animation = 'fadeInUp 1s ease 0.3s forwards';
 
   if(carContainer) {
     const isMobile = window.innerWidth <= 992;
@@ -14,36 +9,6 @@ function startAnimations() {
     if(carGif) carGif.style.animation = 'vibrate 0.2s linear infinite';
     setupCarAnimationLoop();
   }
-
-  const aboutContent = document.getElementById('aboutContent');
-  if(aboutContent) aboutContent.style.animation = 'fadeInUp 1s ease 0.5s forwards';
-
-  const sectionHeader = document.getElementById('sectionHeader');
-  if(sectionHeader) sectionHeader.style.animation = 'fadeInUp 1s ease 0.7s forwards';
-
-  const packagesHeader = document.getElementById('packagesHeader');
-  if (packagesHeader) {
-      packagesHeader.style.animation = 'fadeInUp 1s ease 0.9s forwards';
-  }
-
-  const prototypesHeader = document.getElementById('prototypesHeader');
-  if (prototypesHeader) {
-      prototypesHeader.style.animation = 'fadeInUp 1s ease 1.1s forwards';
-  }
-
-  const experimentalHeader = document.getElementById('experimentalHeader');
-  if (experimentalHeader) {
-      experimentalHeader.style.animation = 'fadeInUp 1s ease 1.4s forwards';
-  }
-
-  const cards = document.querySelectorAll('.project-card');
-  cards.forEach((card, index) => {
-    const delay = 0.9 + (index * 0.2);
-    card.style.animation = `fadeInUp 1s ease ${delay}s forwards`;
-  });
-
-  const contactContent = document.getElementById('contactContent');
-  if(contactContent) contactContent.style.animation = 'fadeInUp 1s ease 1.7s forwards';
 
   setTimeout(setupPlaneAnimationLoop, 0); // this number decides when the plane animation starts
 }
@@ -95,7 +60,7 @@ function setupCarAnimationLoop() {
 }
 
 (function () {
-  const images = document.querySelectorAll('.hero img, header img');
+  const images = document.querySelectorAll('.hero img, header img, .graffiti-img');
   let loadedImages = 0;
   let hasLoaded = false;
 
@@ -115,21 +80,18 @@ function setupCarAnimationLoop() {
     }
   }
 
-  const safetyTimeout = setTimeout(finishLoading, 3000);
-
   function checkAllImagesLoaded() {
     loadedImages++;
-    if (loadedImages === images.length) {
-      clearTimeout(safetyTimeout);
+    if (loadedImages >= images.length) {
       finishLoading();
     }
   }
 
   if (images.length === 0) {
-    clearTimeout(safetyTimeout);
     finishLoading();
   } else {
     images.forEach(img => {
+      img.loading = 'eager';
       if (img.complete) {
         checkAllImagesLoaded();
       } else {
@@ -199,16 +161,17 @@ window.addEventListener('scroll', function () {
 
 const scrollToTopBox = document.getElementById('scrollToTopBox');
 if(scrollToTopBox) {
+  let lastScrollTop = 0;
+
   window.addEventListener('scroll', function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const margin = clientHeight * 0.25;
+    const visible = scrollTop < lastScrollTop && scrollTop > margin && scrollTop + clientHeight < scrollHeight - margin;
 
-    if (windowHeight + scrollTop >= documentHeight - 5) {
-      scrollToTopBox.classList.add('show');
-    } else {
-      scrollToTopBox.classList.remove('show');
-    }
+    scrollToTopBox.classList.toggle('show', visible);
+    lastScrollTop = scrollTop;
   });
 
   scrollToTopBox.addEventListener('click', function () {
@@ -217,15 +180,88 @@ if(scrollToTopBox) {
 }
 
 
-function toggleBlog(id, btn) {
-  const fullText = document.getElementById(id);
-  if (fullText) {
-    fullText.classList.toggle('active');
-    if (fullText.classList.contains('active')) {
-      btn.innerText = 'Read Less';
-    } else {
-      btn.innerText = 'Read More';
+const blogSearch = document.getElementById('blogSearch');
+if (blogSearch) {
+  const blogCards = Array.from(document.querySelectorAll('#blogGrid .blog-card'));
+  const blogSearchEmpty = document.getElementById('blogSearchEmpty');
+  const blogSearchBtn = document.getElementById('blogSearchBtn');
+
+  function unwrapHighlights(root) {
+    root.querySelectorAll('mark.search-highlight').forEach(function (mark) {
+      const parent = mark.parentNode;
+      parent.replaceChild(document.createTextNode(mark.textContent), mark);
+      parent.normalize();
+    });
+  }
+
+  function highlightText(root, query) {
+    const lower = query.toLowerCase();
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+
+    while (walker.nextNode()) {
+      textNodes.push(walker.currentNode);
     }
+
+    textNodes.forEach(function (node) {
+      const text = node.nodeValue;
+      const index = text.toLowerCase().indexOf(lower);
+
+      if (index === -1) return;
+
+      const fragment = document.createDocumentFragment();
+      let last = 0;
+      let match = index;
+
+      while (match !== -1) {
+        fragment.appendChild(document.createTextNode(text.slice(last, match)));
+
+        const mark = document.createElement('mark');
+        mark.className = 'search-highlight';
+        mark.textContent = text.slice(match, match + query.length);
+        fragment.appendChild(mark);
+
+        last = match + query.length;
+        match = text.toLowerCase().indexOf(lower, last);
+      }
+
+      fragment.appendChild(document.createTextNode(text.slice(last)));
+      node.parentNode.replaceChild(fragment, node);
+    });
+  }
+
+  function filterBlogs() {
+    const query = blogSearch.value.trim();
+    const lower = query.toLowerCase();
+    let visible = 0;
+
+    blogCards.forEach(function (card) {
+      const text = card.querySelector('.blog-text');
+      if (!text) return;
+
+      unwrapHighlights(text);
+
+      const match = !query || text.textContent.toLowerCase().indexOf(lower) !== -1;
+      card.style.display = match ? '' : 'none';
+
+      if (match) {
+        visible++;
+        if (query) highlightText(text, query);
+      }
+    });
+
+    if (blogSearchEmpty) {
+      blogSearchEmpty.hidden = visible !== 0;
+    }
+  }
+
+  blogSearch.addEventListener('input', filterBlogs);
+
+  if (blogSearchBtn) {
+    blogSearchBtn.addEventListener('click', function () {
+      filterBlogs();
+      blogSearch.focus();
+    });
   }
 }
 
@@ -371,14 +407,35 @@ function toggleBionic(id, btn) {
   if (!fullText) return;
 
   if (!fullText.dataset.originalHtml) {
-    fullText.dataset.originalHtml = fullText.innerHTML;
+    const clone = fullText.cloneNode(true);
+
+    clone.querySelectorAll('mark.search-highlight').forEach(function (mark) {
+      mark.replaceWith(document.createTextNode(mark.textContent));
+    });
+
+    clone.normalize();
+
+    clone.querySelectorAll('[style]').forEach(function (el) {
+      el.style.removeProperty('mask-image');
+      el.style.removeProperty('-webkit-mask-image');
+      el.style.removeProperty('opacity');
+      el.style.removeProperty('scale');
+
+      if (!el.getAttribute('style')) {
+        el.removeAttribute('style');
+      }
+    });
+
+    fullText.dataset.originalHtml = clone.innerHTML;
   }
 
   if (fullText.classList.contains('bionic-active')) {
 
     fullText.innerHTML = fullText.dataset.originalHtml;
     fullText.classList.remove('bionic-active');
-    btn.innerText = 'Bionic Mode';
+
+    const visibleBtn = fullText.querySelector('[data-bionic-toggle]') || btn;
+    visibleBtn.innerText = 'Bionic Mode';
   } else {
 
     let html = fullText.dataset.originalHtml;
@@ -411,6 +468,7 @@ function toggleBionic(id, btn) {
         });
         node.parentNode.replaceChild(fragment, node);
       } else if (node.nodeType === Node.ELEMENT_NODE) {
+        if (node.classList && node.classList.contains('blog-article-actions')) return;
         Array.from(node.childNodes).forEach(processNode);
       }
     }
@@ -418,6 +476,114 @@ function toggleBionic(id, btn) {
     Array.from(doc.body.childNodes).forEach(processNode);
     fullText.innerHTML = doc.body.innerHTML;
     fullText.classList.add('bionic-active');
-    btn.innerText = 'Normal Mode';
+
+    const visibleBtn = fullText.querySelector('[data-bionic-toggle]') || btn;
+    visibleBtn.innerText = 'Normal Mode';
   }
 }
+
+function setupScrollFade() {
+  const fadeSelectors = [
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'p',
+    'img',
+    'svg',
+    '.btn',
+    '.tag',
+    '.contact-link',
+    '.blog-date',
+    '.tech-name',
+    '.tech-type'
+  ];
+
+  const elements = Array.from(document.querySelectorAll(fadeSelectors.join(','))).filter(function (el) {
+    return !el.closest('header') &&
+      !el.closest('.lightbox-overlay') &&
+      !el.closest('.blog-article') &&
+      !el.classList.contains('car-gif') &&
+      !el.classList.contains('plane-gif');
+  });
+
+  if (elements.length === 0) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  const fadeRange = 140;
+  let ticking = false;
+  let headerHeight = 80;
+  const masks = new Array(elements.length);
+
+  function measure() {
+    const header = document.querySelector('header');
+    headerHeight = header ? header.getBoundingClientRect().height : 80;
+  }
+
+  function update() {
+    ticking = false;
+    const viewportHeight = window.innerHeight;
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    const factor = Math.min(1, scrollY / (viewportHeight * 0.3));
+    const zoneEnd = headerHeight + fadeRange * factor;
+    const zoneStart = zoneEnd - fadeRange;
+    const rects = new Array(elements.length);
+
+    for (let i = 0; i < elements.length; i++) {
+      rects[i] = elements[i].getBoundingClientRect();
+    }
+
+    for (let i = 0; i < elements.length; i++) {
+      const el = elements[i];
+      const rect = rects[i];
+
+      if (rect.height === 0) continue;
+
+      const localStart = zoneStart - rect.top;
+      const localEnd = zoneEnd - rect.top;
+      let mask;
+
+      if (localEnd <= 0) {
+        mask = 'none';
+      } else if (localStart >= rect.height) {
+        mask = 'linear-gradient(transparent, transparent)';
+      } else {
+        const alpha = localStart < 0 ? Math.min(1, -localStart / fadeRange) : 0;
+        const firstStop = localStart > 0
+          ? 'transparent 0px, transparent ' + localStart.toFixed(1) + 'px'
+          : 'rgba(0, 0, 0, ' + alpha.toFixed(3) + ') 0px';
+        mask = 'linear-gradient(to bottom, ' + firstStop + ', black ' + localEnd.toFixed(1) + 'px)';
+      }
+
+      if (masks[i] !== mask) {
+        el.style.maskImage = mask;
+        el.style.webkitMaskImage = mask;
+        masks[i] = mask;
+      }
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  measure();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function () {
+    measure();
+    onScroll();
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) onScroll();
+  });
+  update();
+}
+
+setupScrollFade();
