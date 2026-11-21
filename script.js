@@ -142,9 +142,9 @@ window.addEventListener('scroll', function () {
   const header = document.querySelector('header');
   if (header) {
     if (window.scrollY > 100) {
-      header.style.backgroundColor = 'rgba(10, 10, 15, 0.95)';
+      header.style.backgroundColor = 'rgba(19, 22, 29, 0.95)';
     } else {
-      header.style.backgroundColor = 'rgba(10, 10, 15, 0.85)';
+      header.style.backgroundColor = 'rgba(19, 22, 29, 0.85)';
     }
   }
 
