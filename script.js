@@ -1,12 +1,67 @@
+const modeToggle = document.getElementById('modeToggle');
+
+function setMode(mode) {
+  if (document.documentElement.dataset.mode === mode) return;
+
+  document.documentElement.dataset.mode = mode;
+  localStorage.setItem('mode', mode);
+
+  if (modeToggle) {
+    modeToggle.textContent = mode === 'yang' ? 'Yang' : 'Ying';
+  }
+}
+
+if (modeToggle) {
+  modeToggle.addEventListener('click', function () {
+    const nextMode = document.documentElement.dataset.mode === 'yang' ? 'ying' : 'yang';
+    const loaderEl = document.getElementById('loader');
+
+    if (!loaderEl) {
+      setMode(nextMode);
+      resetAnimations();
+      return;
+    }
+
+    loaderEl.style.display = 'flex';
+    void loaderEl.offsetWidth;
+    loaderEl.style.opacity = '1';
+
+    setTimeout(function () {
+      setMode(nextMode);
+
+      setTimeout(function () {
+        loaderEl.style.opacity = '0';
+        resetAnimations();
+
+        setTimeout(function () {
+          loaderEl.style.display = 'none';
+        }, 500);
+      }, 600);
+    }, 500);
+  });
+}
+
+setMode(localStorage.getItem('mode') === 'yang' ? 'yang' : 'ying');
+
+let planeHideTimer;
+let planeRestartTimer;
+let carLoopTimer;
+
 function startAnimations() {
   const carContainer = document.getElementById('carContainer');
 
   if(carContainer) {
     const isMobile = window.innerWidth <= 992;
     const carAnimationDuration = isMobile ? '3s' : '5s';
+    carContainer.style.animation = 'none';
+    void carContainer.offsetWidth;
     carContainer.style.animation = `fadeInUp 1s ease 0s forwards, carRace ${carAnimationDuration} linear 0.5s forwards`;
     const carGif = document.querySelector('.car-gif');
-    if(carGif) carGif.style.animation = 'vibrate 0.2s linear infinite';
+    if(carGif) {
+      carGif.style.animation = 'none';
+      void carGif.offsetWidth;
+      carGif.style.animation = 'vibrate 0.2s linear infinite';
+    }
     setupCarAnimationLoop();
   }
 
@@ -26,9 +81,9 @@ function setupPlaneAnimationLoop() {
 
     plane.style.animation = 'flyPlane 8s ease-in-out forwards';
 
-    setTimeout(function () {
+    planeHideTimer = setTimeout(function () {
       plane.style.display = 'none';
-      setTimeout(restartPlaneAnimation, 8000);
+      planeRestartTimer = setTimeout(restartPlaneAnimation, 4000);
     }, 8000);
   }
 
@@ -51,12 +106,19 @@ function setupCarAnimationLoop() {
 
     carContainer.style.animation = `fadeInUp 1s ease forwards, carRace ${carAnimationDuration} linear 0.1s forwards`;
 
-    setTimeout(restartCarAnimation, (parseFloat(carAnimationDuration) * 1000) + delayTime);
+    carLoopTimer = setTimeout(restartCarAnimation, (parseFloat(carAnimationDuration) * 1000) + delayTime);
   }
 
   const isMobile = window.innerWidth <= 992;
   const initialWait = isMobile ? 4000 : 6000;
-  setTimeout(restartCarAnimation, initialWait);
+  carLoopTimer = setTimeout(restartCarAnimation, initialWait);
+}
+
+function resetAnimations() {
+  clearTimeout(planeHideTimer);
+  clearTimeout(planeRestartTimer);
+  clearTimeout(carLoopTimer);
+  startAnimations();
 }
 
 (function () {
@@ -141,11 +203,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function () {
   const header = document.querySelector('header');
   if (header) {
-    if (window.scrollY > 100) {
-      header.style.backgroundColor = 'rgba(19, 22, 29, 0.95)';
-    } else {
-      header.style.backgroundColor = 'rgba(19, 22, 29, 0.85)';
-    }
+    header.classList.toggle('scrolled', window.scrollY > 100);
   }
 
   const logo = document.querySelector('.logo');
