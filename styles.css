@@ -547,6 +547,10 @@ nav {
   height: 22cqw;
 }
 
+:root[data-mode="yang"] .hero-intro-text {
+  padding-left: 34cqw;
+}
+
 .hero-intro-text {
   padding-left: 32.5cqw;
   text-align: left;
