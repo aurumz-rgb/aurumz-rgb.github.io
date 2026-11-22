@@ -517,8 +517,8 @@ nav {
   left: 0.5cqw;
   top: 50%;
   transform: translateY(-50%);
-  width: 26cqw;
-  height: 19.5cqw;
+  width: 28cqw;
+  height: 21cqw;
 }
 
 .hero-art img {
@@ -543,12 +543,12 @@ nav {
 }
 
 :root[data-mode="yang"] .hero-art {
-  width: 27.5cqw;
-  height: 20.5cqw;
+  width: 29.5cqw;
+  height: 22cqw;
 }
 
 .hero-intro-text {
-  padding-left: 31.5cqw;
+  padding-left: 32.5cqw;
   text-align: left;
 }
 
@@ -1586,14 +1586,22 @@ footer {
     left: 0;
     top: 0;
     transform: none;
-    width: 32cqw;
-    height: 24cqw;
+    width: 50cqw;
+    height: 38cqw;
     margin-bottom: 1.2rem;
   }
 
   :root[data-mode="yang"] .hero-art {
-    width: 33.5cqw;
-    height: 25cqw;
+    width: 46cqw;
+    height: 34cqw;
+  }
+
+  :root[data-mode="yang"] .car-gif {
+    width: 85%;
+  }
+
+  :root[data-mode="yang"] .car-container {
+    bottom: calc(var(--car-width) * -0.21);
   }
 
   .hero-intro-text {
@@ -1602,15 +1610,15 @@ footer {
   }
 
   .hero-intro-line {
-    font-size: 6.5cqw;
+    font-size: 9cqw;
   }
 
   .hero-intro-line.hero-intro-name {
-    font-size: 9.5cqw;
+    font-size: 13.5cqw;
   }
 
   .hero-intro-line:last-child {
-    font-size: 7.5cqw;
+    font-size: 10.5cqw;
   }
 
   .hero-logo-right {
