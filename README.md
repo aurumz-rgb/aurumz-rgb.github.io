@@ -10,6 +10,8 @@
 
 *Asset credits : [Gold treasure icons](https://opengameart.org/content/gold-treasure-icons) by Clint Bellanger - used for `assets/pixel/gold-pile.png` and `assets/pixel/gold-icons-salmon.png`, recolored to match the site theme. Licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), so the recolored versions are shared under the same license.*
 
+*The plane, car, rocket and deer gifs are from [LottieFiles](https://lottiefiles.com) (free) - did some adjustments like recolour and fps edits to fit the site themes.*
+
 ---
 
 *License : site code is licensed under the [GNU AGPL-3.0](LICENSE). Assets keep their own licenses, listed above.*

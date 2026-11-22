@@ -1,11 +1,11 @@
 const modeToggle = document.getElementById('modeToggle');
 
 const modeArt = {
-  plane: { ying: 'assets/plane.gif', yang: 'assets/rocket-inverse.gif' },
-  car: { ying: 'assets/car-moving.gif', yang: 'assets/deer-inverse.gif' }
+  plane: { yin: 'assets/plane.gif', yang: 'assets/rocket-inverse.gif' },
+  car: { yin: 'assets/car-moving.gif', yang: 'assets/deer-inverse.gif' }
 };
 
-const modeFavicons = { ying: 'assets/favicon.ico', yang: 'assets/favicon-yang.ico' };
+const modeFavicons = { yin: 'assets/favicon.ico', yang: 'assets/favicon-yang.ico' };
 
 function applyModeFavicon(mode) {
   const favicon = document.querySelector('link[rel="icon"]');
@@ -36,13 +36,13 @@ function setMode(mode) {
   applyModeFavicon(mode);
 
   if (modeToggle) {
-    modeToggle.textContent = mode === 'yang' ? 'Yang' : 'Ying';
+    modeToggle.textContent = mode === 'yang' ? 'Yang' : 'Yin';
   }
 }
 
 if (modeToggle) {
   modeToggle.addEventListener('click', function () {
-    const nextMode = document.documentElement.dataset.mode === 'yang' ? 'ying' : 'yang';
+    const nextMode = document.documentElement.dataset.mode === 'yang' ? 'yin' : 'yang';
     const loaderEl = document.getElementById('loader');
 
     if (!loaderEl) {
@@ -70,7 +70,7 @@ if (modeToggle) {
   });
 }
 
-setMode(localStorage.getItem('mode') === 'yang' ? 'yang' : 'ying');
+setMode(localStorage.getItem('mode') === 'yang' ? 'yang' : 'yin');
 
 let planeHideTimer;
 let planeRestartTimer;
@@ -149,8 +149,7 @@ function setupCarAnimationLoop() {
     carLoopTimer = setTimeout(restartCarAnimation, (parseFloat(carAnimationDuration) * 1000) + delayTime);
   }
 
-  const isMobile = window.innerWidth <= 992;
-  const initialWait = isMobile ? 4000 : 6000;
+  const initialWait = parseFloat(carDuration()) * 1000 + 600;
   carLoopTimer = setTimeout(restartCarAnimation, initialWait);
 }
 

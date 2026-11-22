@@ -362,7 +362,7 @@ nav {
   opacity: 0;
 }
 
-:root[data-mode="yang"] .logo .logo-ying {
+:root[data-mode="yang"] .logo .logo-yin {
   opacity: 0;
 }
 
@@ -517,8 +517,8 @@ nav {
   left: 0.5cqw;
   top: 50%;
   transform: translateY(-50%);
-  width: 24cqw;
-  height: 18cqw;
+  width: 26cqw;
+  height: 19.5cqw;
 }
 
 .hero-art img {
@@ -534,7 +534,7 @@ nav {
   opacity: 0;
 }
 
-:root[data-mode="yang"] .hero-art .hero-art-ying {
+:root[data-mode="yang"] .hero-art .hero-art-yin {
   opacity: 0;
 }
 
@@ -542,26 +542,31 @@ nav {
   opacity: 1;
 }
 
+:root[data-mode="yang"] .hero-art {
+  width: 27.5cqw;
+  height: 20.5cqw;
+}
+
 .hero-intro-text {
-  padding-left: 29cqw;
+  padding-left: 31.5cqw;
   text-align: left;
 }
 
 .hero-intro-line {
   display: block;
   color: var(--text-primary);
-  font-size: 4cqw;
+  font-size: 4.2cqw;
   font-weight: 400;
   line-height: 1.15;
 }
 
 .hero-intro-line.hero-intro-name {
-  font-size: 5.8cqw;
+  font-size: 6.2cqw;
   margin: -0.1cqw 0 0;
 }
 
 .hero-intro-line:last-child {
-  font-size: 4.3cqw;
+  font-size: 4.6cqw;
 }
 
 .hero-intro-line strong {
@@ -586,7 +591,7 @@ nav {
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-logo-right .logo-ying {
+.hero-logo-right .logo-yin {
   transform: scale(1.1);
 }
 
@@ -597,7 +602,7 @@ nav {
   opacity: 0;
 }
 
-:root[data-mode="yang"] .hero-logo-right .logo-ying {
+:root[data-mode="yang"] .hero-logo-right .logo-yin {
   opacity: 0;
 }
 
@@ -673,7 +678,7 @@ nav {
 }
 
 :root[data-mode="yang"] .plane-gif {
-  width: clamp(70px, 12vw, 145px);
+  width: clamp(80px, 15vw, 158px);
 }
 
 :root[data-mode="yang"] .car-container {
@@ -885,7 +890,6 @@ nav {
 }
 
 .project-card:hover {
-  transform: translateY(-15px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   border-color: var(--border-color);
 }
@@ -1430,6 +1434,10 @@ footer {
     width: clamp(600px, 90vw, 950px);
   }
 
+  :root[data-mode="yang"] .plane-gif {
+    width: clamp(150px, 22.7vw, 240px);
+  }
+
   @keyframes carRace {
     0% {
       left: -150px;
@@ -1560,10 +1568,49 @@ footer {
   }
 
   .hero-image-left {
-    width: 180%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
-    transform: translateX(-4%);
+    transform: none;
+    aspect-ratio: auto;
+  }
+
+  .hero-intro {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-art {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 32cqw;
+    height: 24cqw;
+    margin-bottom: 1.2rem;
+  }
+
+  :root[data-mode="yang"] .hero-art {
+    width: 33.5cqw;
+    height: 25cqw;
+  }
+
+  .hero-intro-text {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-intro-line {
+    font-size: 6.5cqw;
+  }
+
+  .hero-intro-line.hero-intro-name {
+    font-size: 9.5cqw;
+  }
+
+  .hero-intro-line:last-child {
+    font-size: 7.5cqw;
   }
 
   .hero-logo-right {
@@ -1604,6 +1651,10 @@ footer {
     top: 20%;
     left: -650px;
     width: clamp(500px, 95vw, 850px);
+  }
+
+  :root[data-mode="yang"] .plane-gif {
+    width: clamp(145px, 27vw, 240px);
   }
 
   @keyframes carRace {
@@ -1668,10 +1719,10 @@ footer {
   }
 
   .hero-image-left {
-    width: 200%;
+    width: 100%;
     max-width: 500px;
     margin: 0 auto;
-    transform: translateX(-5%);
+    transform: none;
   }
 
   .hero-logo-right {
@@ -1717,6 +1768,10 @@ footer {
     top: 15%;
     left: -550px;
     width: clamp(450px, 100vw, 750px);
+  }
+
+  :root[data-mode="yang"] .plane-gif {
+    width: clamp(132px, 28vw, 210px);
   }
 
   .contact-heading {
