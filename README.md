@@ -4,7 +4,7 @@
 
 ## ⭐ My Website (*Not so good coded frontend, mixed with animations*)
 
-*Edit: Well, I feel my website is hot and sexy, and looks really really cool.*
+*Edit: Well, I feel my website is hot and sexy, and looks really really cool. I've outdone myself for sure.*
 
 ---
 
