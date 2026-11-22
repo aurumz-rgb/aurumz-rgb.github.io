@@ -5,6 +5,15 @@ const modeArt = {
   car: { ying: 'assets/car-moving.gif', yang: 'assets/deer-inverse.gif' }
 };
 
+const modeFavicons = { ying: 'assets/favicon.ico', yang: 'assets/favicon-yang.ico' };
+
+function applyModeFavicon(mode) {
+  const favicon = document.querySelector('link[rel="icon"]');
+  if (favicon) {
+    favicon.href = modeFavicons[mode];
+  }
+}
+
 function applyModeArt(mode) {
   const plane = document.getElementById('planeGif');
   const car = document.querySelector('.car-gif');
@@ -24,6 +33,7 @@ function setMode(mode) {
   document.documentElement.dataset.mode = mode;
   localStorage.setItem('mode', mode);
   applyModeArt(mode);
+  applyModeFavicon(mode);
 
   if (modeToggle) {
     modeToggle.textContent = mode === 'yang' ? 'Yang' : 'Ying';
