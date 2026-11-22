@@ -2,7 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://aurumz-rgb.github.io/index.html</loc>
-    <lastmod>2026-11-21</lastmod>
+    <lastmod>2026-11-22</lastmod>
+    <image:image><image:loc>https://aurumz-rgb.github.io/assets/pixel/gold-pile.png</image:loc></image:image>
+    <image:image><image:loc>https://aurumz-rgb.github.io/assets/pixel/gold-icons-salmon.png</image:loc></image:image>
+    <image:image><image:loc>https://aurumz-rgb.github.io/assets/rocket-inverse.gif</image:loc></image:image>
+    <image:image><image:loc>https://aurumz-rgb.github.io/assets/deer-inverse.gif</image:loc></image:image>
+    <image:image><image:loc>https://aurumz-rgb.github.io/assets/plane.gif</image:loc></image:image>
+    <image:image><image:loc>https://aurumz-rgb.github.io/assets/car-moving.gif</image:loc></image:image>
     <image:image><image:loc>https://aurumz-rgb.github.io/images/reviewaid.webp</image:loc></image:image>
     <image:image><image:loc>https://aurumz-rgb.github.io/images/critiplot.webp</image:loc></image:image>
     <image:image><image:loc>https://aurumz-rgb.github.io/images/evidencesynthesis-tools.webp</image:loc></image:image>

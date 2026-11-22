@@ -423,6 +423,7 @@ nav {
   line-height: 1.6;
   cursor: pointer;
   position: relative;
+  opacity: 0.86;
   transition: var(--transition);
 }
 
@@ -491,6 +492,8 @@ nav {
 
 .hero-image-left {
   width: 100%;
+  aspect-ratio: 4 / 1;
+  container-type: inline-size;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: none;
@@ -500,6 +503,69 @@ nav {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.hero-intro {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-art {
+  position: absolute;
+  left: 0.5cqw;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24cqw;
+  height: 18cqw;
+}
+
+.hero-art img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-art .hero-art-yang {
+  opacity: 0;
+}
+
+:root[data-mode="yang"] .hero-art .hero-art-ying {
+  opacity: 0;
+}
+
+:root[data-mode="yang"] .hero-art .hero-art-yang {
+  opacity: 1;
+}
+
+.hero-intro-text {
+  padding-left: 29cqw;
+  text-align: left;
+}
+
+.hero-intro-line {
+  display: block;
+  color: var(--text-primary);
+  font-size: 4cqw;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.hero-intro-line.hero-intro-name {
+  font-size: 5.8cqw;
+  margin: -0.1cqw 0 0;
+}
+
+.hero-intro-line:last-child {
+  font-size: 4.3cqw;
+}
+
+.hero-intro-line strong {
+  font-weight: 700;
 }
 
 .hero-logo-right {
@@ -518,6 +584,10 @@ nav {
   height: auto;
   object-fit: contain;
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-logo-right .logo-ying {
+  transform: scale(1.1);
 }
 
 .hero-logo-right .logo-yang {
@@ -543,6 +613,36 @@ nav {
 
 .hero-buttons .btn {
   padding: 1rem 1.5rem;
+  opacity: 0.86;
+}
+
+.hero-buttons .btn {
+  background-color: #fff;
+  color: #0d0d0e;
+  border-color: #fff;
+  box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.45);
+}
+
+.hero-buttons .btn:hover {
+  background-color: #e9e9e9;
+  color: #0d0d0e;
+  border-color: #fff;
+  box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.45);
+  transform: translate(2px, 2px);
+}
+
+.hero-buttons .btn-outline {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}
+
+.hero-buttons .btn-outline:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #0d0d0e;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.45);
 }
 
 .car-container {
@@ -570,6 +670,28 @@ nav {
   z-index: 10;
   opacity: 0;
   pointer-events: none;
+}
+
+:root[data-mode="yang"] .plane-gif {
+  width: clamp(70px, 12vw, 145px);
+}
+
+:root[data-mode="yang"] .car-container {
+  bottom: calc(var(--car-width) * -0.2);
+}
+
+:root[data-mode="yang"] .car-gif {
+  width: 66%;
+}
+
+@keyframes deerHop {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(-2.5deg);
+  }
 }
 
 .about {

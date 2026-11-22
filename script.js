@@ -1,10 +1,29 @@
 const modeToggle = document.getElementById('modeToggle');
 
+const modeArt = {
+  plane: { ying: 'assets/plane.gif', yang: 'assets/rocket-inverse.gif' },
+  car: { ying: 'assets/car-moving.gif', yang: 'assets/deer-inverse.gif' }
+};
+
+function applyModeArt(mode) {
+  const plane = document.getElementById('planeGif');
+  const car = document.querySelector('.car-gif');
+  if (plane && plane.dataset.mode !== mode) {
+    plane.src = modeArt.plane[mode];
+    plane.dataset.mode = mode;
+  }
+  if (car && car.dataset.mode !== mode) {
+    car.src = modeArt.car[mode];
+    car.dataset.mode = mode;
+  }
+}
+
 function setMode(mode) {
   if (document.documentElement.dataset.mode === mode) return;
 
   document.documentElement.dataset.mode = mode;
   localStorage.setItem('mode', mode);
+  applyModeArt(mode);
 
   if (modeToggle) {
     modeToggle.textContent = mode === 'yang' ? 'Yang' : 'Ying';
@@ -47,12 +66,19 @@ let planeHideTimer;
 let planeRestartTimer;
 let carLoopTimer;
 
+function carDuration() {
+  const isMobile = window.innerWidth <= 992;
+  if (document.documentElement.dataset.mode === 'yang') {
+    return isMobile ? '4.5s' : '7s'; // the deer takes it easy
+  }
+  return isMobile ? '3s' : '5s';
+}
+
 function startAnimations() {
   const carContainer = document.getElementById('carContainer');
 
   if(carContainer) {
-    const isMobile = window.innerWidth <= 992;
-    const carAnimationDuration = isMobile ? '3s' : '5s';
+    const carAnimationDuration = carDuration();
     carContainer.style.animation = 'none';
     void carContainer.offsetWidth;
     carContainer.style.animation = `fadeInUp 1s ease 0s forwards, carRace ${carAnimationDuration} linear 0.5s forwards`;
@@ -60,7 +86,9 @@ function startAnimations() {
     if(carGif) {
       carGif.style.animation = 'none';
       void carGif.offsetWidth;
-      carGif.style.animation = 'vibrate 0.2s linear infinite';
+      carGif.style.animation = document.documentElement.dataset.mode === 'yang'
+        ? 'deerHop 0.5s ease-in-out infinite'
+        : 'vibrate 0.2s linear infinite';
     }
     setupCarAnimationLoop();
   }
@@ -79,12 +107,15 @@ function setupPlaneAnimationLoop() {
 
     void plane.offsetWidth;
 
-    plane.style.animation = 'flyPlane 8s ease-in-out forwards';
+    const isYang = document.documentElement.dataset.mode === 'yang';
+    const flightMs = isYang ? 11000 : 8000; // rocket cruises a bit slower
+    plane.style.animation = `flyPlane ${flightMs / 1000}s ease-in-out forwards`;
 
     planeHideTimer = setTimeout(function () {
       plane.style.display = 'none';
-      planeRestartTimer = setTimeout(restartPlaneAnimation, 4000);
-    }, 8000);
+      const restartGap = isYang ? 2000 : 4000; // rocket flies again a bit sooner
+      planeRestartTimer = setTimeout(restartPlaneAnimation, restartGap);
+    }, flightMs);
   }
 
   restartPlaneAnimation();
@@ -95,8 +126,7 @@ function setupCarAnimationLoop() {
   if(!carContainer) return;
 
   function restartCarAnimation() {
-    const isMobile = window.innerWidth <= 992;
-    const carAnimationDuration = isMobile ? '3s' : '5s';
+    const carAnimationDuration = carDuration();
     const delayTime = 100;
 
     carContainer.style.animation = 'none';
@@ -556,7 +586,8 @@ function setupScrollFade() {
     '.contact-link',
     '.blog-date',
     '.tech-name',
-    '.tech-type'
+    '.tech-type',
+    '.hero-intro-text'
   ];
 
   const elements = Array.from(document.querySelectorAll(fadeSelectors.join(','))).filter(function (el) {
