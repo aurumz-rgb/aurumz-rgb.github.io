@@ -547,8 +547,10 @@ nav {
   height: 22cqw;
 }
 
-:root[data-mode="yang"] .hero-intro-text {
-  padding-left: 34cqw;
+@media (min-width: 577px) {
+  :root[data-mode="yang"] .hero-intro-text {
+    padding-left: 34cqw;
+  }
 }
 
 .hero-intro-text {
@@ -1639,7 +1641,11 @@ footer {
 
   .btn {
     padding: 0.7rem 1.2rem;
-    font-size: 0.65rem;
+    font-size: 0.5rem;
+  }
+
+  .project-links .btn {
+    font-size: 0.5rem;
   }
 
   .about-text p {
